@@ -1,20 +1,20 @@
 [alias]
-	ac = !git add -A && git commit -m
-	acp = "!f() { git add -A && git commit -m \"$*\" && git push; }; f"
+    ac = !git add -A && git commit -m
+    acp = "!f() { git add -A && git commit -m \"$*\" && git push; }; f"
     undo = reset --soft HEAD^
     amend = commit --amend --no-edit
     st = status
     co = checkout
-	br = branch
+    br = branch
     rb = pull --rebase
-	rbu = pull --rebase upstream main
-	logo = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ (%cn)" --decorate
+    rbu = pull --rebase upstream main
+    logo = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ (%cn)" --decorate
 [user]
-	email = nguyenlehoang361@gmail.com
-	name = finn361
+    email = nguyenlehoang361@gmail.com
+    name = finn361
 [push]
-	autoSetupRemote = true
-	default = current
+    autoSetupRemote = true
+    default = current
 [init]
     defaultBranch = main
 
