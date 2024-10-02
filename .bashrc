@@ -117,7 +117,7 @@ if ! shopt -oq posix; then
 fi
 
 # fnm
-FNM_PATH="/home/finn/.local/share/fnm"
+FNM_PATH="/home/nguyenlh6/.local/share/fnm"
 if [ -d "$FNM_PATH" ]; then
   export PATH="$FNM_PATH:$PATH"
   eval "`fnm env`"

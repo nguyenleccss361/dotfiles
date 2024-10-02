@@ -6,7 +6,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # pnpm
-export PNPM_HOME="/home/finn/.local/share/pnpm"
+export PNPM_HOME="/home/nguyenlh6/.local/share/pnpm"
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
@@ -20,7 +20,7 @@ export PATH=$BUN_INSTALL/bin:$PATH
 
 # cursor editor
 cursor() {
-    /home/finn/cursor.AppImage "$@" &
+    /home/nguyenlh6/cursor.AppImage "$@" &
 }
 
 # bat
@@ -35,7 +35,7 @@ alias -g -- -h='-h 2>&1 | bat --language=help --style=plain'
 alias -g -- --help='--help 2>&1 | bat --language=help --style=plain'
 
 # fnm
-FNM_PATH="/home/finn/.local/share/fnm"
+FNM_PATH="/home/nguyenlh6/.local/share/fnm"
 if [ -d "$FNM_PATH" ]; then
   export PATH="$FNM_PATH:$PATH"
   eval "`fnm env`"
@@ -63,7 +63,7 @@ zinit ice depth=1; zinit light romkatv/powerlevel10k
 zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
-zinit light Aloxaf/fzf-tab
+# zinit light Aloxaf/fzf-tab
 
 # Add in snippets
 zinit snippet OMZP::git
@@ -124,6 +124,7 @@ export QT_IM_MODULE=ibus
 # alacritty
 export PATH="$HOME/alacritty/target/release:$PATH"
 
-# zoxide (enhence cd)
+# zoxide (enhance cd)
 export PATH="$HOME/.local/bin:$PATH"
 eval "$(zoxide init --cmd cd zsh)"
+

@@ -10,8 +10,8 @@
 	rbu = pull --rebase upstream main
 	logo = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ (%cn)" --decorate
 [user]
-	email = nguyenlehoang361@gmail.com
-	name = finn361
+	email = nguyenlh6@viettel.com.vn
+	name = nguyenlh6
 [push]
 	autoSetupRemote = true
 	default = current
