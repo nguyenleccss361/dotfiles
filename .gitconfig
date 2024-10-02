@@ -1,0 +1,48 @@
+[alias]
+	ac = !git add -A && git commit -m
+	acp = "!f() { git add -A && git commit -m \"$*\" && git push; }; f"
+    undo = reset --soft HEAD^
+    amend = commit --amend --no-edit
+    st = status
+    co = checkout
+	br = branch
+    rb = pull --rebase
+	rbu = pull --rebase upstream main
+	logo = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ (%cn)" --decorate
+[user]
+	email = nguyenlehoang361@gmail.com
+	name = finn361
+[push]
+	autoSetupRemote = true
+	default = current
+[init]
+    defaultBranch = main
+
+# Delta git diff
+[core]
+    pager = delta
+[interactive]
+    diffFilter = delta --color-only --features=interactive
+[delta]
+    features = decorations
+    line-numbers = true
+    side-by-side = true
+    light = false
+    navigate = true # Use n and N to move between diff sections.
+[delta "interactive"]
+    keep-plus-minus-markers = false
+[add.interactive]
+    useBuiltin = false
+[delta "decorations"]
+    commit-decoration-style = blue ol
+    commit-style = raw
+    file-style = omit
+    hunk-header-decoration-style = blue box
+    hunk-header-file-style = red
+    hunk-header-line-number-style = "#067a00"
+    hunk-header-style = file line-number syntax
+[merge]
+    conflictstyle = diff3
+[diff]
+    colorMoved = default
+
