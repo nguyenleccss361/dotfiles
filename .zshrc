@@ -106,7 +106,7 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 alias ls='ls --color'
 alias ll='ls -lAhF --color'
 alias cl='clear'
-
+alias vim='nvim'
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
