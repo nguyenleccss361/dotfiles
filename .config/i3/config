@@ -106,6 +106,12 @@ bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
+# Make the currently focused window a scratchpad
+bindsym $mod+Shift+minus move scratchpad
+
+# Show the first scratchpad window
+bindsym $mod+minus scratchpad show
+
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
 
@@ -237,8 +243,9 @@ bindsym $mod+Shift+d exec rofi -show drun
 # Startup
 exec vivaldi
 exec code
-exec alacritty 
+exec Alacritty 
 exec spotify
+exec nautilus
 exec google-chrome
 exec copyq
 exec_always feh --bg-scale /home/finn/Pictures/Background/wallpaper.jpg
@@ -246,5 +253,7 @@ exec_always feh --bg-scale /home/finn/Pictures/Background/wallpaper.jpg
 # Auto set workspace
 assign [class="Vivaldi-stable"] $ws1
 assign [class="Code"] $ws2
+assign [class="Alacritty"] $ws2
 assign [class="Google-chrome"] $ws3
+assign [class="Org.gnome.Nautilus"] $ws9
 assign [class="Spotify"] $ws9
