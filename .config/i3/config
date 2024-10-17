@@ -9,7 +9,7 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
-set $mod Mod1
+set $mod Mod3
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -35,6 +35,9 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork --color "
 exec --no-startup-id nm-applet
 # Auto disconnect ethernet
 exec --no-startup-id zsh -c 'nmcli device disconnect ens33'
+
+# Auto keyboard mapping
+exec --no-startup-id xmodmap ~/.Xmodmap
 
 # Polybar launcher
 exec_always --no-startup-id ~/.config/polybar/launch_polybar.sh
@@ -107,6 +110,12 @@ bindsym $mod+f fullscreen toggle
 bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
+
+# Make the currently focused window a scratchpad
+bindsym $mod+Shift+minus move scratchpad
+
+# Show the first scratchpad window
+bindsym $mod+minus scratchpad show
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
