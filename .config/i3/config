@@ -244,7 +244,6 @@ bindsym $mod+Shift+d exec rofi -show drun
 exec vivaldi
 exec code
 exec spotify
-exec nautilus
 exec google-chrome
 exec copyq
 exec_always feh --bg-scale /home/finn/Pictures/Background/wallpaper.jpg
@@ -253,5 +252,4 @@ exec_always feh --bg-scale /home/finn/Pictures/Background/wallpaper.jpg
 assign [class="Vivaldi-stable"] $ws1
 assign [class="Code"] $ws2
 assign [class="Google-chrome"] $ws3
-assign [class="Org.gnome.Nautilus"] $ws9
 assign [class="Spotify"] $ws9
