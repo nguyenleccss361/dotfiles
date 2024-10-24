@@ -3,8 +3,8 @@ import = [
 ]
 
 [window]
-padding.x = 10
-padding.y = 10
+padding.x = 5
+padding.y = 5
 class.instance = "Alacritty"
 class.general = "Alacritty"
 opacity = 1
