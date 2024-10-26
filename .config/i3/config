@@ -9,7 +9,7 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
-set $mod Mod1 
+set $mod Mod4
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 font pango:JetBrainsMono Nerd Font 14
@@ -37,10 +37,8 @@ exec --no-startup-id zsh -c 'nmcli device disconnect ens33'
 
 # Auto keyboard mapping
 exec --no-startup-id xmodmap ~/.Xmodmap
-
-# Polybar launcher
-exec_always --no-startup-id ~/.config/polybar/launch_polybar.sh
-
+exec --no-startup-id setxkbmap -option caps:swapescape
+exec --no-startup-id setxkbmap -option altwin:swap_lalt_lwin
 # Screenshots
 bindsym Print exec maim "/home/$USER/Pictures/$(date).jpg"
 bindsym $mod+Print exec maim --window $(xdotool getactivewindow) "/home/$USER/Pictures/$(date).jpg"
