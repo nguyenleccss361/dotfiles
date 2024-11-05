@@ -125,3 +125,4 @@ fi
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 . "$HOME/.cargo/env"
+. "/home/nguyenlh6/.deno/env"

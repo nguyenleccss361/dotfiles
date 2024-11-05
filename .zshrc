@@ -31,7 +31,6 @@ function cat() {
     batcat "$@" | xclip -selection clipboard
 }
 export MANPAGER="sh -c 'col -bx | batcat -l man -p'" MANROFFOPT="-c"
-alias -g -- -h='-h 2>&1 | bat --language=help --style=plain'
 alias -g -- --help='--help 2>&1 | bat --language=help --style=plain'
 
 # fnm
@@ -129,3 +128,4 @@ export PATH="$HOME/alacritty/target/release:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 eval "$(zoxide init --cmd cd zsh)"
 
+. "/home/nguyenlh6/.deno/env"
