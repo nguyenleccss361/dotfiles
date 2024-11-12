@@ -129,3 +129,11 @@ export PATH="$HOME/.local/bin:$PATH"
 eval "$(zoxide init --cmd cd zsh)"
 
 . "/home/nguyenlh6/.deno/env"
+
+export EDITOR=vim
+
+# open the current command in an editor for multi-line editing
+autoload -Uz edit-command-line
+bindkey "^X^E" edit-command-line
+
+source $HOME/.nix-profile/etc/profile.d/hm-session-vars.sh
