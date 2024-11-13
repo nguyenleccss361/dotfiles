@@ -28,13 +28,19 @@
 
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
-    fastfetch
+    # dev
     neovim
+    zsh
+    alacritty
 
     # utils
     ripgrep # recursively searches directories for a regex pattern
     jq
-    # fzf
+    fzf
+    i3
+    i3status
+    i3lock
+    fastfetch
 
     # misc
     tree
@@ -42,6 +48,10 @@
     # productivity
     btop  # replacement of htop/nmon
   ];
+
+  xsession.windowManager.i3 = {
+    enable = true;
+  };
 
   # This value determines the home Manager release that your
   # configuration is compatible with. This helps avoid breakage
