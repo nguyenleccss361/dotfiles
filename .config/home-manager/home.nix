@@ -32,7 +32,9 @@
   ];
 
   home.file = {
-    ".config/i3".source = ~/dotfiles/.config/i3;
+    ".config/i3".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/.config/i3";
+    # ".config/nix".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/.config/nix";
+    # ".config/home-manager".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/.config/home-manager";
   };
 
   # xsession.windowManager.i3 = {
