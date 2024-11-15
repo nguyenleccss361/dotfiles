@@ -22,7 +22,6 @@
   home.packages = with pkgs; [
     # dev
     neovim
-    alacritty
     tmux
     zsh
     fnm
@@ -51,6 +50,9 @@
     vscode
     obsidian
     google-chrome
+
+    # fonts
+    jetbrains-mono
   ];
 
   home.file = {
@@ -64,6 +66,8 @@
     ".tmux.conf".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/.tmux.conf";
     ".p10k.zsh".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/.p10k.zsh";
   };
+
+  fonts.fontconfig.enable = true;
 
   programs.home-manager.enable = true;
 

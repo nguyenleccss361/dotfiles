@@ -14,10 +14,6 @@ set $mod Mod4
 # is used in the bar {} block below.
 font pango:JetBrainsMono Nerd Font 14
 
-# This font is widely installed, provides lots of unicode glyphs, right-to-left
-# text rendering and scalability on retina/hidpi displays (thanks to pango).
-# font pango:DejaVu Sans Mono 8
-
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
 exec --no-startup-id dex --autostart --environment i3
@@ -257,13 +253,13 @@ bar {
     modifier Mod2
     status_command i3status
     colors {
-		    background $bg-color
-	      separator #757575
+        background $bg-color
+        separator #757575
         #                  border             background         text
- 		    focused_workspace  $bg-color          $bg-color          $text-color
- 		    inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
- 		    urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
- 	  }
+        focused_workspace  $bg-color          $bg-color          $text-color
+        inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
+        urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
+ 	}
 }
 
 # ------------------------------------------
