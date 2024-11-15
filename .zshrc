@@ -5,44 +5,20 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# pnpm
-export PNPM_HOME="/home/finn/.local/share/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-alias pn='pnpm'
-# pnpm end
-
-# bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH=$BUN_INSTALL/bin:$PATH
-
-# cursor editor
-cursor() {
-    /home/finn/cursor.AppImage "$@" &
-}
-
 # bat
-function bat() {
-    batcat "$@"
-}
 function cat() {
-    batcat "$@" | xclip -selection clipboard
+    bat "$@" | xclip -selection clipboard
 }
-export MANPAGER="sh -c 'col -bx | batcat -l man -p'" MANROFFOPT="-c"
-alias -g -- -h='-h 2>&1 | bat --language=help --style=plain'
+export MANPAGER="sh -c 'col -bx | bat -l man -p'" MANROFFOPT="-c"
+# alias -g -- -h='-h 2>&1 | bat --language=help --style=plain'
 alias -g -- --help='--help 2>&1 | bat --language=help --style=plain'
 
 # fnm
-FNM_PATH="/home/finn/.local/share/fnm"
-if [ -d "$FNM_PATH" ]; then
-  export PATH="$FNM_PATH:$PATH"
-  eval "`fnm env`"
-fi
-
-# neovim
-export PATH="$PATH:/opt/nvim-linux64/bin"
+# FNM_PATH="/home/finn/.local/share/fnm"
+# if [ -d "$FNM_PATH" ]; then
+#  export PATH="$FNM_PATH:$PATH"
+#  eval "`fnm env`"
+# fi
 
 # Set the directory we want to store zinit and plugins
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
@@ -106,24 +82,12 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 alias ls='ls --color'
 alias ll='ls -lAhF --color'
 alias cl='clear'
-alias vim='nvim'
-# fzf
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# caniuse
-# echo '. <(caniuse --completion)' >> ~/.zshrc
-
-# bamboo-ibus
-export GTK_IM_MODULE=ibus
-export XMODIFIERS=@im=ibus
-export QT_IM_MODULE=ibus
-
-# rust
-. "$HOME/.cargo/env"
+alias vi='nvim'
+alias pn='pnpm'
 
 # alacritty
-export PATH="$HOME/alacritty/target/release:$PATH"
+# export PATH="$HOME/alacritty/target/release:$PATH"
 
 # zoxide (enhence cd)
-export PATH="$HOME/.local/bin:$PATH"
+# export PATH="$HOME/.local/bin:$PATH"
 eval "$(zoxide init --cmd cd zsh)"

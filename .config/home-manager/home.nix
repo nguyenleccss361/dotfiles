@@ -25,13 +25,32 @@
     alacritty
     tmux
     zsh
+    fnm
+    gh
 
     # utils
     kanata
     fastfetch
+    fzf
+    jq
+    ripgrep
+    tree
+    btop
+    i3-resurrect
+    feh
+    rofi
+    playerctl
+    xclip
+    zoxide
+    maim
+    xdotool
+    bat
+    delta
 
     # non-free
     vscode
+    obsidian
+    google-chrome
   ];
 
   home.file = {
