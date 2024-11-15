@@ -13,13 +13,6 @@ export MANPAGER="sh -c 'col -bx | bat -l man -p'" MANROFFOPT="-c"
 # alias -g -- -h='-h 2>&1 | bat --language=help --style=plain'
 alias -g -- --help='--help 2>&1 | bat --language=help --style=plain'
 
-# fnm
-# FNM_PATH="/home/finn/.local/share/fnm"
-# if [ -d "$FNM_PATH" ]; then
-#  export PATH="$FNM_PATH:$PATH"
-#  eval "`fnm env`"
-# fi
-
 # Set the directory we want to store zinit and plugins
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 
@@ -88,6 +81,5 @@ alias pn='pnpm'
 # alacritty
 # export PATH="$HOME/alacritty/target/release:$PATH"
 
-# zoxide (enhence cd)
-# export PATH="$HOME/.local/bin:$PATH"
+# zoxide (enhance cd)
 eval "$(zoxide init --cmd cd zsh)"

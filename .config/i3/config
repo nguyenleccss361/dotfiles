@@ -29,16 +29,19 @@ exec --no-startup-id dex --autostart --environment i3
 # screen before suspend. Use loginctl lock-session to lock your screen.
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork --color "$bg-color"
 
+# Disabled scroll on title bar
+bindsym button4 nop
+bindsym button5 nop
+
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
 # Auto disconnect ethernet
-exec --no-startup-id zsh -c 'nmcli device disconnect ens33'
+# exec --no-startup-id zsh -c 'nmcli device disconnect ens33'
 
 # Auto keyboard mapping
-exec --no-startup-id xmodmap ~/.Xmodmap
-exec --no-startup-id setxkbmap -option caps:swapescape
-exec --no-startup-id setxkbmap -option altwin:swap_lalt_lwin
+# exec --no-startup-id xmodmap ~/.Xmodmap
+
 # Screenshots
 bindsym Print exec maim "/home/$USER/Pictures/$(date).jpg"
 bindsym $mod+Print exec maim --window $(xdotool getactivewindow) "/home/$USER/Pictures/$(date).jpg"
@@ -48,7 +51,7 @@ bindsym Ctrl+$mod+s exec maim | xclip -selection clipboard -t image/png
 bindsym Ctrl+$mod+Print exec maim --window $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
 bindsym Shift+$mod+s exec maim --select | xclip -selection clipboard -t image/png
 # Clipboard manager
-bindsym $mod+Shift+v exec copyq toggle
+# bindsym $mod+Shift+v exec copyq toggle
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -62,40 +65,40 @@ bindsym $mod+Shift+t exec i3-resurrect restore
 set $i3_resurrect i3-resurrect
 # Save workspace mode.
 mode "save" {
-  bindsym 1 exec $i3_resurrect save -w 1
-  bindsym 2 exec $i3_resurrect save -w 2
-  bindsym 3 exec $i3_resurrect save -w 3
-  bindsym 4 exec $i3_resurrect save -w 4
-  bindsym 5 exec $i3_resurrect save -w 5
-  bindsym 6 exec $i3_resurrect save -w 6
-  bindsym 7 exec $i3_resurrect save -w 7
-  bindsym 8 exec $i3_resurrect save -w 8
-  bindsym 9 exec $i3_resurrect save -w 9
-  bindsym 0 exec $i3_resurrect save -w 0
-  # Back to normal: Enter, Escape, or s
-  bindsym Return mode "default"
-  bindsym Escape mode "default"
-  bindsym s mode "default"
-  bindsym $mod+s mode "default"
+    bindsym 1 exec $i3_resurrect save -w 1
+    bindsym 2 exec $i3_resurrect save -w 2
+    bindsym 3 exec $i3_resurrect save -w 3
+    bindsym 4 exec $i3_resurrect save -w 4
+    bindsym 5 exec $i3_resurrect save -w 5
+    bindsym 6 exec $i3_resurrect save -w 6
+    bindsym 7 exec $i3_resurrect save -w 7
+    bindsym 8 exec $i3_resurrect save -w 8
+    bindsym 9 exec $i3_resurrect save -w 9
+    bindsym 0 exec $i3_resurrect save -w 0
+    # Back to normal: Enter, Escape, or s
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+    bindsym s mode "default"
+    bindsym $mod+s mode "default"
 }
 bindsym $mod+s mode "save"
 # Restore workspace mode.
 mode "restore" {
-  bindsym 1 exec $i3_resurrect restore -w 1
-  bindsym 2 exec $i3_resurrect restore -w 2
-  bindsym 3 exec $i3_resurrect restore -w 3
-  bindsym 4 exec $i3_resurrect restore -w 4
-  bindsym 5 exec $i3_resurrect restore -w 5
-  bindsym 6 exec $i3_resurrect restore -w 6
-  bindsym 7 exec $i3_resurrect restore -w 7
-  bindsym 8 exec $i3_resurrect restore -w 8
-  bindsym 9 exec $i3_resurrect restore -w 9
-  bindsym 0 exec $i3_resurrect restore -w 0
-  # Back to normal: Enter, Escape, or n
-  bindsym Return mode "default"
-  bindsym Escape mode "default"
-  bindsym n mode "default"
-  bindsym $mod+n mode "default"
+    bindsym 1 exec $i3_resurrect restore -w 1
+    bindsym 2 exec $i3_resurrect restore -w 2
+    bindsym 3 exec $i3_resurrect restore -w 3
+    bindsym 4 exec $i3_resurrect restore -w 4
+    bindsym 5 exec $i3_resurrect restore -w 5
+    bindsym 6 exec $i3_resurrect restore -w 6
+    bindsym 7 exec $i3_resurrect restore -w 7
+    bindsym 8 exec $i3_resurrect restore -w 8
+    bindsym 9 exec $i3_resurrect restore -w 9
+    bindsym 0 exec $i3_resurrect restore -w 0
+    # Back to normal: Enter, Escape, or n
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+    bindsym n mode "default"
+    bindsym $mod+n mode "default"
 }
 bindsym $mod+n mode "restore"
 
@@ -113,10 +116,15 @@ bindsym $mod+Return exec alacritty
 bindsym $mod+Shift+q kill
 
 # change focus
-bindsym $mod+h focus left
-bindsym $mod+j focus down
-bindsym $mod+k focus up
-bindsym $mod+l focus right
+# bindsym $mod+h focus left
+# bindsym $mod+j focus down
+# bindsym $mod+k focus up
+# bindsym $mod+l focus right
+
+bindsym $mod+Ctrl+h focus left
+bindsym $mod+Ctrl+j focus down
+bindsym $mod+Ctrl+k focus up
+bindsym $mod+Ctrl+l focus right
 
 # move focused window
 bindsym $mod+Ctrl+h move left
@@ -200,27 +208,27 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
+    # These bindings trigger as soon as you enter the resize mode
 
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym semicolon resize grow width 10 px or 10 ppt
+    # Pressing left will shrink the window’s width.
+    # Pressing right will grow the window’s width.
+    # Pressing up will shrink the window’s height.
+    # Pressing down will grow the window’s height.
+    bindsym j resize shrink width 10 px or 10 ppt
+    bindsym k resize grow height 10 px or 10 ppt
+    bindsym l resize shrink height 10 px or 10 ppt
+    bindsym semicolon resize grow width 10 px or 10 ppt
 
-        # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
+    # same bindings, but for the arrow keys
+    bindsym Left resize shrink width 10 px or 10 ppt
+    bindsym Down resize grow height 10 px or 10 ppt
+    bindsym Up resize shrink height 10 px or 10 ppt
+    bindsym Right resize grow width 10 px or 10 ppt
 
-        # back to normal: Enter or Escape or $mod+r
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-        bindsym $mod+r mode "default"
+    # back to normal: Enter or Escape or $mod+r
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+    bindsym $mod+r mode "default"
 }
 
 bindsym $mod+r mode "resize"
@@ -238,8 +246,8 @@ set $urgent-bg-color     #E53935
 # Window colors
 #                       border              background         text                 indicator
 client.focused          $bg-color           $bg-color          $text-color          #00ff00
-client.unfocused        $inactive-bg-color $inactive-bg-color $inactive-text-color #00ff00
-client.focused_inactive $inactive-bg-color $inactive-bg-color $inactive-text-color #00ff00
+client.unfocused        $inactive-bg-color  $inactive-bg-color $inactive-text-color #00ff00
+client.focused_inactive $inactive-bg-color  $inactive-bg-color $inactive-text-color #00ff00
 client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          #00ff00
 
 # Toggle i3bar
@@ -247,6 +255,15 @@ bar {
     mode hide
     hidden_state hide
     modifier Mod2
+    status_command i3status
+    colors {
+		    background $bg-color
+	      separator #757575
+        #                  border             background         text
+ 		    focused_workspace  $bg-color          $bg-color          $text-color
+ 		    inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
+ 		    urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
+ 	  }
 }
 
 # ------------------------------------------
@@ -269,8 +286,8 @@ exec code
 exec google-chrome
 exec spotify
 # Startup in background
-exec copyq
-exec_always feh --bg-scale /home/finn/Pictures/Background/wallpaper.jpg
+# exec copyq
+exec_always feh --bg-scale /home/nguyenlh6/Pictures/Background/wallpaper.jpg
 
 # Auto set workspace
 assign [class="Vivaldi-stable"] $ws1
