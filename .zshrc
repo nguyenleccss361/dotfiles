@@ -6,7 +6,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # bat
-function cat() {
+function batcat() {
     bat "$@" | xclip -selection clipboard
 }
 export MANPAGER="sh -c 'col -bx | bat -l man -p'" MANROFFOPT="-c"
