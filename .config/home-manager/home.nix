@@ -22,9 +22,9 @@
   home.packages = with pkgs; [
     # dev
     neovim
+    alacritty
     tmux
     zsh
-    fnm
     gh
 
     # utils

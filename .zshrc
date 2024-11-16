@@ -78,8 +78,5 @@ alias cl='clear'
 alias vi='nvim'
 alias pn='pnpm'
 
-# alacritty
-# export PATH="$HOME/alacritty/target/release:$PATH"
-
 # zoxide (enhance cd)
 eval "$(zoxide init --cmd cd zsh)"
