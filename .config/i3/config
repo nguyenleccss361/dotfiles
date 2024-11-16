@@ -283,7 +283,7 @@ exec google-chrome
 exec spotify
 # Startup in background
 # exec copyq
-exec_always feh --bg-scale /home/nguyenlh6/Pictures/Background/wallpaper.jpg
+exec_always feh --bg-scale /home/finn/Pictures/Background/wallpaper.jpg
 
 # Auto set workspace
 assign [class="Vivaldi-stable"] $ws1
