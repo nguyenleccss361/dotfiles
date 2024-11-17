@@ -6,7 +6,7 @@ Documentation=https://github.com/jtroo/kanata
 Environment=PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:%h/.nix-profile/bin/kanata
 Environment=DISPLAY=:0
 Type=simple
-ExecStart=/bin/sh -c 'exec /home/finn/.nix-profile/bin/kanata --cfg ${HOME}/.config/kanata/kanata.kbd'
+ExecStart=/bin/sh -c 'exec /home/finn/.nix-profile/bin/kanata --cfg ${HOME}/.config/kanata/brick.kbd'
 Restart=no
 
 [Install]
