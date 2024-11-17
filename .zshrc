@@ -83,6 +83,7 @@ alias ll='ls -lAhF --color'
 alias cl='clear'
 alias vi='nvim'
 alias pn='pnpm'
+alias grep='grep -a --color=auto'
 
 # zoxide (enhance cd)
 eval "$(zoxide init --cmd cd zsh)"
