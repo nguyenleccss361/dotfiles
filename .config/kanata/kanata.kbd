@@ -4,12 +4,7 @@
 )
 
 (defsrc
-  a s d f j k l ;
-)
-
-(deflayermap (base-layer)
-  caps bspc
-  bspc esc
+  caps bspc lalt a s d f j k l ;
 )
 
 (defvar
@@ -26,8 +21,11 @@
   k (tap-hold $tap-time $hold-time k rsft)
   l (tap-hold $tap-time $hold-time l ralt)
   ; (tap-hold $tap-time $hold-time ; rmet)
+  caps bspc
+  bspc esc
+  lalt lmeta
 )
 
 (deflayer base
-  @a @s @d @f @j @k @l @;
+  @caps @bspc @lalt @a @s @d @f @j @k @l @;
 )
