@@ -5,10 +5,10 @@ Documentation=man:tmux(1)
 [Service]
 Type=forking
 Environment=DISPLAY=:0
-ExecStart=/home/finn/.nix-profile/bin/tmux start-server
+ExecStart=/home/nguyenlh6/.nix-profile/bin/tmux start-server
 
-ExecStop=/home/finn/.tmux/plugins/tmux-resurrect/scripts/save.sh
-ExecStop=/home/finn/.nix-profile/bin/tmux kill-server
+ExecStop=/home/nguyenlh6/.tmux/plugins/tmux-resurrect/scripts/save.sh
+ExecStop=/home/nguyenlh6/.nix-profile/bin/tmux kill-server
 KillMode=control-group
 
 RestartSec=2
