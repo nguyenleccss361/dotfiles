@@ -12,7 +12,7 @@
     logo = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ (%cn)" --decorate
 [user]
     email = nguyenlehoang361@gmail.com
-    name = nguyenlh6
+    name = finn
 [push]
     autoSetupRemote = true
     default = current
