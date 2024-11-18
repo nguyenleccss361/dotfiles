@@ -106,7 +106,7 @@ floating_modifier $mod
 tiling_drag modifier titlebar
 
 # start a terminal
-bindsym $mod+Return exec nixGL alacritty
+bindsym $mod+Return exec alacritty
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -273,8 +273,9 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 bindsym $mod+Shift+period exec systemctl suspend
 bindsym $mod+shift+x exec i3lock
-bindsym $mod+d exec rofi -show run
-bindsym $mod+Shift+d exec rofi -show drun
+bindsym $mod+d exec krunner
+# bindsym $mod+d exec rofi -show run
+# bindsym $mod+Shift+d exec rofi -show drun
 
 # Startup
 exec vivaldi
