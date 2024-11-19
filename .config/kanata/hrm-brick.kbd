@@ -11,23 +11,23 @@
   _     _     _     _     _     _          _     _     _     _     _     bspc       _     _
   @cap  @a    @s    @d    @f    _          _     @j    @k    @l    @;    _          _
   _     _     _     _     _     _          _     _     _     _     _     _
-  _     lmet  @#nav             @#sym                  _     @hyp  _
+  _     @#nav lmet              @#sym                  _     @hyp  _
 )
 
-(deflayer symbols
-  _     _     _     _     _     _          _     _     _     _     _     _          _     _
-  _     1     2     3     4     5          6     7     8     9     0     _          _     _
-  _     S-1   S-2   S-3   S-4   S-5        S-6   S-7   S-8   S-9   S-\   _          _     
-  _     =     -     S-=   S-[   S-]        [     ]     ;     S-;   \     _
+(deflayer symbol
+  _     f1    f2    f3    f4    f5         f6    f7    f8    f9    f10   f11        _     _
+  _     S-1   S-2   S-3   S-4   S-5        S-6   S-7   S-8   -     S--   f12        _     _
+  grv   S-grv S-9   S-0   S-[   S-]        [     ]     =     S-=   \     S-\        _     
+  _     _     _     _     _     _          _     _     _     _     _     _
   _     _     _                 _                      _     _     _
 )
 
 (deflayer navigation
-  _     f1    f2    f3    f4    f5         f6    f7    f8    f9    f10   f11        _     _
-  _     M-1   M-2   M-3   M-4   M-5        M-6   M-7   M-8   M-9   M-0   f12        _     _
-  caps  C-a   C-s   S-tab tab   _          lft   down  up    rght  C--   C-=        _
-  _     C-z   C-x   C-c   C-v   _          home  pgdn  pgup  end  _     _
-  _     _     del               _                      esc   _     _
+  _     _     _     _     _     _          _     _     _     C--   C-=   del        _     _
+  _     M-1   M-2   M-3   M-4   M-5        M-6   M-7   M-8   M-9   M-0   _          _     _
+  caps  C-a   C-s   S-tab tab   _          lft   down  up    rght  _     _          _
+  _     C-z   C-x   C-c   C-v   _          home  pgdn  pgup  end   _     _
+  _     _     _                 _                      _     _     _
 )
 
 (deflayer mouse
@@ -54,7 +54,7 @@
 (defalias
   ;; Layers
   #nav (tap-hold 100 100 lalt (layer-while-held navigation))
-  #sym (tap-hold $tap-time 300 spc (layer-while-held symbols))
+  #sym (tap-hold $tap-time 300 spc (layer-while-held symbol))
   #med (tap-hold $tap-time 300 tab (layer-while-held media))
   #mse (tap-hold $tap-time 300 q (layer-while-held mouse))
   
@@ -62,14 +62,14 @@
   hyp (multi lsft lctl lmet ralt)              ;; right hyper
 
   ;; Home row mod
-  a (tap-hold $tap-time $hold-time a (layer-while-held navigation))
+  a (tap-hold $tap-time $hold-time a lmet)
   s (tap-hold $tap-time $hold-time s lalt)
   d (tap-hold $tap-time $hold-time d lsft)
   f (tap-hold $tap-time $hold-time f lctl)
   j (tap-hold $tap-time $hold-time j rctl)
   k (tap-hold $tap-time $hold-time k rsft)
   l (tap-hold $tap-time $hold-time l ralt)
-  ; (tap-hold $tap-time $hold-time ; (layer-while-held navigation))
+  ; (tap-hold $tap-time $hold-time ; lmet)
 
   ;; Mouse wheel emulation
   mwu (mwheel-up    50 120)
