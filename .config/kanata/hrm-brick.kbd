@@ -1,53 +1,49 @@
 (defsrc
-  grv   1     2     3     4     5     6     7     8     9     0     -     =     bspc
-  tab   q     w     e     r     t     y     u     i     o     p     [     ]     \
-  caps  a     s     d     f     g     h     j     k     l     ;     '     ret
-  lsft  z     x     c     v     b     n     m     ,     .     /     rsft
-  lctl  lmet  lalt              spc               ralt  rmet  rctl
+  grv   1     2     3     4     5          6     7     8     9     0     -          =     bspc
+  tab   q     w     e     r     t          y     u     i     o     p     [          ]     \
+  caps  a     s     d     f     g          h     j     k     l     ;     '          ret
+  lsft  z     x     c     v     b          n     m     ,     .     /     rsft
+  lctl  lmet  lalt              spc                    ralt  rmet  rctl
 )
 
 (deflayer base
-  _     _     _     _     _     _     _     _     _     _     _     _     _     _
-  @#nav _     _     _     _     _     _     _     _     _     _     bspc  _     _
-  @cap  @a    @s    @d    @f    _     _     @j    @k    @l    @;    _     _
-  _     _     _     _     _     _     _     _     _     _     _     _
-  _     lalt  lmet              @#sym             _     @hyp  _
+  _     _     _     _     _     _          _     _     _     _     _     _          _     _
+  _     _     _     _     _     _          _     _     _     _     _     bspc       _     _
+  @cap  @a    @s    @d    @f    _          _     @j    @k    @l    @;    _          _
+  _     _     _     _     _     _          _     _     _     _     _     _
+  _     lmet  @#nav             @#sym                  _     @hyp  _
 )
 
 (deflayer symbols
-  _     f1    f2    f3    f4    f5    f6    f7    f8    f9    f10   f11   _     _
-  _     1     2     3     4     5     6     7     8     9     0     f12   _     _
-  _     S-1   S-2   S-3   S-4   S-5   S-6   S-7   S-8   S-9   S-\   _     _     
-  _     =     -     S-=   S-[   S-]   [     ]     ;     S-;   \     _
-  _     _     _                 _                 _     _     _
+  _     _     _     _     _     _          _     _     _     _     _     _          _     _
+  _     1     2     3     4     5          6     7     8     9     0     _          _     _
+  _     S-1   S-2   S-3   S-4   S-5        S-6   S-7   S-8   S-9   S-\   _          _     
+  _     =     -     S-=   S-[   S-]        [     ]     ;     S-;   \     _
+  _     _     _                 _                      _     _     _
 )
 
-;; Navigation layer:
-;;  - up: Super-num (i3/sway) or Alt-num (browser), zoom in/out
-;;  - left: one-hand shortcuts (Ctrl-WASZXCV), Tab/Shift-Tab, prev/next
-;;  - right: Vim-like arrows on HJKL, home/end page up/down, mouse scroll
 (deflayer navigation
-  _     M-1   M-2   M-3   M-4   M-5   M-6   M-7   M-8   M-9   M-0   C--   C-=   _
-  _     _     C-w   bck   fwd   _     home  pgdn  pgup  end   _     _     _     _
-  caps  C-a   C-s   S-tab tab   _     lft   down  up    rght  _     _     _
-  _     C-z   C-x   C-c   C-v   _     @mwl  @mwd  @mwu  @mwr  _     _
-  _     _     del               _                 esc   _     _
+  _     f1    f2    f3    f4    f5         f6    f7    f8    f9    f10   f11        _     _
+  _     M-1   M-2   M-3   M-4   M-5        M-6   M-7   M-8   M-9   M-0   f12        _     _
+  caps  C-a   C-s   S-tab tab   _          lft   down  up    rght  C--   C-=        _
+  _     C-z   C-x   C-c   C-v   _          home  pgdn  pgup  end  _     _
+  _     _     del               _                      esc   _     _
 )
 
 (deflayer mouse
-  _     _     _     _     _     _     _    _     _     _     _     _     _     _
-  _     _     _     _     _     _     _    mlft  mmid  mrgt  _     _     _     _
-  _     _     _     _     _     _     bck  _     _     fwd   _     _     _     
-  _     _     _     _     _     _     @mwl  @mwd @mwu  @mwr  _     _     
-  _     _     _                 _                _     _     _
+  _     _     _     _     _     _          _     _     _     _     _     _          _     _
+  _     _     _     _     _     _          _     mlft  mmid  mrgt  _     _          _     _
+  _     _     _     _     _     _          bck   _     _     fwd   _     _          _     
+  _     _     _     _     _     _          @mwl  @mwd  @mwu  @mwr  _     _     
+  _     _     _                 _                      _     _     _
 )
 
 (deflayer media
-  _     _     _     _     _     _     _    _      _     _     _     _     _     _
-  _     _     _     _     _     _     _    _      _     _     pp    _     _     _
-  _     _     _     _     _     _     prev voldwn volu  next  _     _     _     
-  _     _     _     _     _     _     _    mute   _     _     _     _    
-  _     _     _                 _                 _     _     _
+  _     _     _     _     _     _          _    _      _     _     _     _          _     _
+  _     _     _     _     _     _          _    _      _     _     pp    _          _     _
+  _     _     _     _     _     _          prev voldwn volu  next  _     _          _     
+  _     _     _     _     _     _          _    mute   _     _     _     _    
+  _     _     _                 _                      _     _     _
 )
 
 (defvar
@@ -57,7 +53,7 @@
 
 (defalias
   ;; Layers
-  #nav (tap-hold $tap-time $hold-time lalt (layer-while-held navigation))
+  #nav (tap-hold 100 100 lalt (layer-while-held navigation))
   #sym (tap-hold $tap-time 300 spc (layer-while-held symbols))
   #med (tap-hold $tap-time 300 tab (layer-while-held media))
   #mse (tap-hold $tap-time 300 q (layer-while-held mouse))
@@ -66,14 +62,14 @@
   hyp (multi lsft lctl lmet ralt)              ;; right hyper
 
   ;; Home row mod
-  a (tap-hold $tap-time $hold-time a lmet)
+  a (tap-hold $tap-time $hold-time a (layer-while-held navigation))
   s (tap-hold $tap-time $hold-time s lalt)
   d (tap-hold $tap-time $hold-time d lsft)
   f (tap-hold $tap-time $hold-time f lctl)
   j (tap-hold $tap-time $hold-time j rctl)
   k (tap-hold $tap-time $hold-time k rsft)
   l (tap-hold $tap-time $hold-time l ralt)
-  ; (tap-hold $tap-time $hold-time ; rmet)
+  ; (tap-hold $tap-time $hold-time ; (layer-while-held navigation))
 
   ;; Mouse wheel emulation
   mwu (mwheel-up    50 120)
