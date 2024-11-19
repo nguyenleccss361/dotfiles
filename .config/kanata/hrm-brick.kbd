@@ -3,15 +3,15 @@
   tab   q     w     e     r     t     y     u     i     o     p     [     ]     \
   caps  a     s     d     f     g     h     j     k     l     ;     '     ret
   lsft  z     x     c     v     b     n     m     ,     .     /     rsft
-  lctl  lalt  lmet              spc               ralt  rmet  rctl
+  lctl  lmet  lalt              spc               ralt  rmet  rctl
 )
 
 (deflayer base
   _     _     _     _     _     _     _     _     _     _     _     _     _     _
-  @#med @#nav _     _     _     _     _     _     _     _     _     bspc  _     _
+  @#nav _     _     _     _     _     _     _     _     _     _     bspc  _     _
   @cap  @a    @s    @d    @f    _     _     @j    @k    @l    @;    _     _
-  _     @#mse _     _     _     _     _     _     _     _     _     _
-  _     _     _                 @#spc             _     @hyp  _
+  _     _     _     _     _     _     _     _     _     _     _     _
+  _     lalt  lmet              @#sym             _     @hyp  _
 )
 
 (deflayer symbols
@@ -58,9 +58,9 @@
 (defalias
   ;; Layers
   #nav (tap-hold $tap-time $hold-time lalt (layer-while-held navigation))
-  #spc (tap-hold $tap-time 300 spc (layer-while-held symbols))
-  #med (tap-hold $tap-time 300 spc (layer-while-held media))
-  #mse (tap-hold $tap-time 300 spc (layer-while-held mouse))
+  #sym (tap-hold $tap-time 300 spc (layer-while-held symbols))
+  #med (tap-hold $tap-time 300 tab (layer-while-held media))
+  #mse (tap-hold $tap-time 300 q (layer-while-held mouse))
   
   cap (tap-hold $tap-time $hold-time esc lctl) ;; Tap esc - hold ctrl
   hyp (multi lsft lctl lmet ralt)              ;; right hyper
