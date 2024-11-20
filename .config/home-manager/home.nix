@@ -14,8 +14,8 @@
   };
 
   home = {
-    username = "nguyenlh6";
-    homeDirectory = "/home/nguyenlh6";
+    username = "finn";
+    homeDirectory = "/home/finn";
     stateVersion = "24.11";
   };
 
