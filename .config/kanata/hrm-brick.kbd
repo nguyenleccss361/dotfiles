@@ -13,7 +13,7 @@
 
 (deflayer base
   _     _     _     _     _     _          _     _     _     _     _     _          _     _
-  _     _     _     _     _     _          _     _     _     _     _     bspc       _     _
+  @#num _     _     _     _     _          _     _     _     _     _     bspc       _     _
   @cap  @a    @s    @d    @f    _          _     @j    @k    @l    @;    _          _
   _     _     _     _     _     _          _     _     _     _     _     _
   _     @#nav _                 @#sym                  _     @hyp
@@ -25,6 +25,14 @@
   grv   [     S-[   S-9   -     S--        =     S-=   S-0   S-]   ]     S-grv      _     
   _     S-1   S-2   S-3   S-4   S-5        S-6   S-7   S-8   \     S-\   _
   _     _     _                 _                      _     _     
+)
+
+(deflayer number
+  _     _     _     _     _     _          _     nlck  S-8   /     =     _          _     _
+  _     _     _     _     _     _          _     7     8     9     S-=   _       _     _
+  _     _     _     _     _     _          S-9   4     5     6     .     S-0        _
+  _     _     _     _     _     _          0     1     2     3     -     _
+  _     _     _                 _                      _     _
 )
 
 (deflayer navigation
@@ -72,6 +80,7 @@
   ;; Layers
   #nav (tap-dance 300 ((layer-while-held navigation) (layer-while-held mouse) lalt))
   #sym (tap-hold 100 300 spc (layer-while-held symbol))
+  #num (tap-hold 100 300 tab (layer-while-held number))
   
   cap (tap-hold 150 200 esc lctl) ;; Tap esc - hold ctrl
   hyp (multi lsft lctl lmet ralt) ;; Right hyper
