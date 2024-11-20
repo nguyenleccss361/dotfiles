@@ -15,7 +15,7 @@
   _     _     _     _     _     _          _     _     _     _     _     _          _     _
   @#num _     _     _     _     _          _     _     _     _     _     bspc       _     _
   @cap  @a    @s    @d    @f    _          _     @j    @k    @l    @;    _          _
-  _     _     _     _     _     _          _     _     _     _     _     _
+  _     _     _     _     _     _          _     _     _     _     _     @#nomod
   _     @#nav lmet              @#sym                  _     @hyp
 )
 
@@ -56,7 +56,7 @@
   _     _     _     _     _     _          _     _     _     _     _     _          _     _
   _     _     _     _     _     _          _     _     _     _     _     _          _     _
   _     _     _     _     _     _          _     _     _     _     _     _          _
-  _     _     _     _     _     _          _     _     _     _     _     _
+  _     _     _     _     _     _          _     _     _     _     _     @#nomod
   _     _     _                 _                      _     _
 )
 (deffakekeys
@@ -81,6 +81,7 @@
   #nav (tap-dance 300 ((layer-while-held navigation) (layer-while-held mouse) lalt))
   #sym (tap-hold 100 300 spc (layer-while-held symbol))
   #num (tap-hold 100 300 tab (layer-while-held number))
+  #nomod (tap-hold 100 500 (layer-switch base) (layer-switch nomods))
   
   cap (tap-hold 150 200 esc lctl) ;; Tap esc - hold ctrl
   hyp (multi lsft lctl lmet ralt) ;; Right hyper
