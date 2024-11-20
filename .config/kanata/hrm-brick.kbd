@@ -1,9 +1,14 @@
+(defcfg
+  process-unmapped-keys yes
+  movemouse-smooth-diagonals yes ;; non-smooth diagonals when drawing a line in some app
+)
+
 (defsrc
   grv   1     2     3     4     5          6     7     8     9     0     -          =     bspc
   tab   q     w     e     r     t          y     u     i     o     p     [          ]     \
   caps  a     s     d     f     g          h     j     k     l     ;     '          ret
   lsft  z     x     c     v     b          n     m     ,     .     /     rsft
-  lctl  lalt  lmet              spc                    ralt  rmet  rctl
+  lctl  lalt  lmet              spc                    ralt  rmet
 )
 
 (deflayer base
@@ -11,67 +16,85 @@
   _     _     _     _     _     _          _     _     _     _     _     bspc       _     _
   @cap  @a    @s    @d    @f    _          _     @j    @k    @l    @;    _          _
   _     _     _     _     _     _          _     _     _     _     _     _
-  _     @#nav _                 @#sym                  _     @hyp  _
+  _     @#nav _                 @#sym                  _     @hyp
 )
 
 (deflayer symbol
   _     f1    f2    f3    f4    f5         f6    f7    f8    f9    f10   f11        _     _
-  _     S-1   S-2   S-3   S-4   S-5        S-6   S-7   S-8   -     S--   f12        _     _
-  grv   S-grv S-9   S-0   S-[   S-]        [     ]     =     S-=   \     S-\        _     
-  _     _     _     _     _     _          _     _     _     _     _     _
-  _     _     _                 _                      _     _     _
+  _     1     2     3     4     5          6     7     8     9     0     f12        _     _
+  grv   [     S-[   S-9   -     S--        =     S-=   S-0   S-]   ]     S-grv      _     
+  _     S-1   S-2   S-3   S-4   S-5        S-6   S-7   S-8   \     S-\   _
+  _     _     _                 _                      _     _     
 )
 
 (deflayer navigation
-  _     _     _     _     _     _          _     _     _     C--   C-=   del        _     _
-  _     M-1   M-2   M-3   M-4   M-5        M-6   M-7   M-8   M-9   M-0   _          _     _
+  _     _     _     _     _     _          _     _     _     _     _     _          _     _
+  _     M-1   M-2   M-3   M-4   M-5        M-6   M-7   M-8   M-9   M-0   del        _     _
   caps  C-a   C-s   S-tab tab   _          lft   down  up    rght  _     _          _
   _     C-z   C-x   C-c   C-v   _          home  pgdn  pgup  end   _     _
-  _     _     _                 _                      _     _     _
+  _     _     _                 _                      _     _     
 )
 
 (deflayer mouse
   _     _     _     _     _     _          _     _     _     _     _     _          _     _
-  _     _     _     _     _     _          _     mlft  mmid  mrgt  _     _          _     _
-  _     _     _     _     _     _          bck   _     _     fwd   _     _          _     
+  _     mute  volu  pp    _     _          _     mlft  @ms↑  mrgt  mmid  _          _     _
+  _     prev  vold  next  _     _          _     @ms←  @ms↓  @ms→  _     _          _     
   _     _     _     _     _     _          @mwl  @mwd  @mwu  @mwr  _     _     
-  _     _     _                 _                      _     _     _
+  _     _     _                 _                      _     _     
 )
 
-(deflayer media
-  _     _     _     _     _     _          _    _      _     _     _     _          _     _
-  _     _     _     _     _     _          _    _      _     _     pp    _          _     _
-  _     _     _     _     _     _          prev voldwn volu  next  _     _          _     
-  _     _     _     _     _     _          _    mute   _     _     _     _    
-  _     _     _                 _                      _     _     _
+;; HRM improvement
+(deflayer nomods
+  _     _     _     _     _     _          _     _     _     _     _     _          _     _
+  _     _     _     _     _     _          _     _     _     _     _     _          _     _
+  _     _     _     _     _     _          _     _     _     _     _     _          _
+  _     _     _     _     _     _          _     _     _     _     _     _
+  _     _     _                 _                      _     _
+)
+(deffakekeys
+  to-base (layer-switch base)
 )
 
 (defvar
-  tap-time 150
-  hold-time 200
+  left-hand-keys (
+    q w e r t
+    a s d f g
+    z x c v b
+  )
+  right-hand-keys (
+    y u i o p
+    h j k l ;
+    n m , . /
+  )
 )
 
 (defalias
   ;; Layers
-  #nav (tap-hold 100 100 lalt (layer-while-held navigation))
-  #sym (tap-hold $tap-time 300 spc (layer-while-held symbol))
-  #med (tap-hold $tap-time 300 tab (layer-while-held media))
-  #mse (tap-hold $tap-time 300 q (layer-while-held mouse))
+  #nav (tap-dance 300 ((layer-while-held navigation) (layer-while-held mouse) lalt))
+  #sym (tap-hold 100 300 spc (layer-while-held symbol))
   
-  cap (tap-hold $tap-time $hold-time esc lctl) ;; Tap esc - hold ctrl
-  hyp (multi lsft lctl lmet ralt)              ;; right hyper
+  cap (tap-hold 150 200 esc lctl) ;; Tap esc - hold ctrl
+  hyp (multi lsft lctl lmet ralt) ;; Right hyper
 
   ;; Home row mod
-  a (tap-hold $tap-time $hold-time a lmet)
-  s (tap-hold $tap-time $hold-time s lalt)
-  d (tap-hold $tap-time $hold-time d lsft)
-  f (tap-hold $tap-time $hold-time f lctl)
-  j (tap-hold $tap-time $hold-time j rctl)
-  k (tap-hold $tap-time $hold-time k rsft)
-  l (tap-hold $tap-time $hold-time l ralt)
-  ; (tap-hold $tap-time $hold-time ; lmet)
+  tap (multi
+    (layer-switch nomods)
+    (on-idle-fakekey to-base tap 20)
+  )
+  a (tap-hold-release-keys 150 200 (multi a @tap) lmet $left-hand-keys)
+  s (tap-hold-release-keys 150 200 (multi s @tap) lalt $left-hand-keys)
+  d (tap-hold-release-keys 150 200 (multi d @tap) lsft $left-hand-keys)
+  f (tap-hold-release-keys 150 200 (multi f @tap) lctl $left-hand-keys)
+  j (tap-hold-release-keys 150 200 (multi j @tap) rctl $right-hand-keys)
+  k (tap-hold-release-keys 150 200 (multi k @tap) rsft $right-hand-keys)
+  l (tap-hold-release-keys 150 200 (multi l @tap) ralt $right-hand-keys)
+  ; (tap-hold-release-keys 150 200 (multi ; @tap) rmet $right-hand-keys)
 
-  ;; Mouse wheel emulation
+  ;; Mouse
+  ms↑ (movemouse-accel-up 1 1000 1 5)
+  ms← (movemouse-accel-left 1 1000 1 5)
+  ms↓ (movemouse-accel-down 1 1000 1 5)
+  ms→ (movemouse-accel-right 1 1000 1 5)
   mwu (mwheel-up    50 120)
   mwd (mwheel-down  50 120)
   mwl (mwheel-left  50 120)
