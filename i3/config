@@ -23,11 +23,6 @@ bindsym button5 nop
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
-# Auto disconnect ethernet
-# exec --no-startup-id zsh -c 'nmcli device disconnect ens33'
-
-# Auto keyboard mapping
-# exec --no-startup-id xmodmap ~/.Xmodmap
 
 # Screenshots
 bindsym Print exec maim "/home/$USER/Pictures/$(date).jpg"
