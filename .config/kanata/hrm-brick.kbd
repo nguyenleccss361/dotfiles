@@ -16,13 +16,13 @@
   @#num _     _     _     _     _          _     _     _     _     _     bspc       _     _
   @cap  @a    @s    @d    @f    _          _     @j    @k    @l    @;    _          _
   _     _     _     _     _     _          _     _     _     _     _     @#nomod
-  _     @#nav _                 @#sym                  _     @hyp
+  _     @#sym _                 @#nav                  _     @hyp
 )
 
 (deflayer symbol
   _     f1    f2    f3    f4    f5         f6    f7    f8    f9    f10   f11        _     _
   _     1     2     3     4     5          6     7     8     9     0     f12        _     _
-  grv   [     S-[   S-9   -     S--        =     S-=   S-0   S-]   ]     S-grv      _     
+  grv   -     S--     [     S-[   S-9      S-0   S-]   ]     =     S-=   S-grv      _     
   _     S-1   S-2   S-3   S-4   S-5        S-6   S-7   S-8   \     S-\   _
   _     _     _                 _                      _     _     
 )
@@ -78,8 +78,8 @@
 
 (defalias
   ;; Layers
-  #nav (tap-dance 300 ((layer-while-held navigation) (layer-while-held mouse) lalt))
-  #sym (tap-hold 100 300 spc (layer-while-held symbol))
+  #nav (tap-hold 100 200 spc (layer-while-held navigation))
+  #sym (tap-dance 300 ((layer-while-held symbol) lalt))
   #num (tap-hold 100 300 tab (layer-while-held number))
   #nomod (tap-hold 100 500 (layer-switch base) (layer-switch nomods))
   
@@ -93,10 +93,10 @@
   )
   a (tap-hold-release-keys 150 200 (multi a @tap) lmet $left-hand-keys)
   s (tap-hold-release-keys 150 200 (multi s @tap) lalt $left-hand-keys)
-  d (tap-hold-release-keys 150 200 (multi d @tap) lsft $left-hand-keys)
-  f (tap-hold-release-keys 150 200 (multi f @tap) lctl $left-hand-keys)
-  j (tap-hold-release-keys 150 200 (multi j @tap) rctl $right-hand-keys)
-  k (tap-hold-release-keys 150 200 (multi k @tap) rsft $right-hand-keys)
+  d (tap-hold-release-keys 100 200 (multi d @tap) lsft $left-hand-keys)
+  f (tap-hold-release-keys 100 200 (multi f @tap) lctl $left-hand-keys)
+  j (tap-hold-release-keys 100 200 (multi j @tap) rctl $right-hand-keys)
+  k (tap-hold-release-keys 100 200 (multi k @tap) rsft $right-hand-keys)
   l (tap-hold-release-keys 150 200 (multi l @tap) ralt $right-hand-keys)
   ; (tap-hold-release-keys 150 200 (multi ; @tap) rmet $right-hand-keys)
 

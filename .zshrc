@@ -82,6 +82,7 @@ alias ls='ls --color'
 alias ll='ls -lAhF --color'
 alias cl='clear'
 alias vi='nvim'
+alias vim='/bin/vi'
 alias pn='pnpm'
 alias grep='grep -a --color=auto'
 
