@@ -22,7 +22,6 @@
   home.packages = with pkgs; [
     # dev
     neovim
-    tmux
     zsh
     gh
 
@@ -46,12 +45,10 @@
     delta
 
     # non-free
-    vscode
     obsidian
-    google-chrome
 
-    # fonts
-    jetbrains-mono
+    # font
+    (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
   ];
 
   home.file = {

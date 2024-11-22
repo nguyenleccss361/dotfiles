@@ -83,7 +83,7 @@
   #num (tap-hold 100 300 tab (layer-while-held number))
   #nomod (tap-hold 100 500 (layer-switch base) (layer-switch nomods))
   
-  cap (tap-hold 150 200 esc lctl) ;; Tap esc - hold ctrl
+  cap (tap-hold 100 150 esc lctl) ;; Tap esc - hold ctrl
   hyp (multi lsft lctl lmet ralt) ;; Right hyper
 
   ;; Home row mod
