@@ -16,7 +16,7 @@
   home = {
     username = "nguyenlh6";
     homeDirectory = "/home/nguyenlh6";
-    stateVersion = "25.05";
+    stateVersion = "24.11";
   };
 
   home.packages = with pkgs; [
@@ -52,6 +52,7 @@
 
   home.file = {
     ".config/home-manager".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/home-manager";
+    ".config/nix".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/nix";
     ".config/kanata/hrm-brick.kbd".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/kanata/hrm-brick.kbd";
     ".config/systemd/user/kanata.service".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/kanata/kanata.service";
     ".config/i3".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/i3";
