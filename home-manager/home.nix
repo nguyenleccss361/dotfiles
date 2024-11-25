@@ -44,7 +44,7 @@
     delta
 
     # non-free
-    # obsidian
+    obsidian
 
     # font
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
