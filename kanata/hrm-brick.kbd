@@ -22,7 +22,7 @@
 (deflayer symbol
   _     f1    f2    f3    f4    f5         f6    f7    f8    f9    f10   f11        _     _
   _     1     2     3     4     5          6     7     8     9     0     f12        _     _
-  grv   grv   S--     [     S-[   S-9      S-0   S-]   ]     =     S-grv _          _     
+  _     grv   =     [     S-[   S-9        S-0   S-]   ]     S-=   S-grv _          _     
   _     S-1   S-2   S-3   S-4   S-5        S-6   S-7   S-8   \     S-\   _
   _     _     _                 _                      _     _     
 )
