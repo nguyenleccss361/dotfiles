@@ -33,18 +33,13 @@
     ripgrep
     tree
     btop
-    i3-resurrect
     feh
     playerctl
     xclip
     zoxide
-    maim
     xdotool
     bat
     delta
-
-    # non-free
-    obsidian
 
     # font
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })

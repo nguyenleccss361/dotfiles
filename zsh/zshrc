@@ -95,3 +95,8 @@ if [ -d "$FNM_PATH" ]; then
   export PATH="/home/nguyenlh6/.local/share/fnm:$PATH"
   eval "`fnm env`"
 fi
+
+# Activate virtual environment automatically
+if [ -f "$HOME/venv/bin/activate" ]; then
+    source "$HOME/venv/bin/activate"
+fi

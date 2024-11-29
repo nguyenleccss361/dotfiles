@@ -139,19 +139,6 @@ bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
-# Restore i3 layout and program
-bindsym $mod+Shift+t i3-resurrect restore
-exec --no-startup-id i3-resurrect restore -w $ws1 --layout-only
-exec --no-startup-id i3-resurrect restore -w $ws2 --layout-only
-exec --no-startup-id i3-resurrect restore -w $ws3 --layout-only
-exec --no-startup-id i3-resurrect restore -w $ws4 --layout-only
-exec --no-startup-id i3-resurrect restore -w $ws5 --layout-only
-exec --no-startup-id i3-resurrect restore -w $ws6 --layout-only
-exec --no-startup-id i3-resurrect restore -w $ws7 --layout-only
-exec --no-startup-id i3-resurrect restore -w $ws8 --layout-only
-exec --no-startup-id i3-resurrect restore -w $ws9 --layout-only
-exec --no-startup-id i3-resurrect restore -w $ws10 --layout-only
-
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
@@ -255,7 +242,7 @@ exec vivaldi
 exec code
 exec alacritty
 exec google-chrome-stable
-exec obsidian
+# exec obsidian
 exec spotify
 # Startup in background
 # exec copyq
