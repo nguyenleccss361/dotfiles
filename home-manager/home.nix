@@ -42,7 +42,7 @@
     i3-resurrect
 
     # font
-    (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+    # (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
   ];
 
   home.file = {
