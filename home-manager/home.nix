@@ -36,7 +36,7 @@
     playerctl
     xclip
     zoxide
-    xdotool
+    xdotools
     bat
     delta
     i3-resurrect
