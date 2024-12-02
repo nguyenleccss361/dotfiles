@@ -25,13 +25,13 @@ bindsym button5 nop
 exec --no-startup-id nm-applet
 
 # Screenshots
-bindsym Print exec maim "/home/$USER/Pictures/$(date).jpg"
-bindsym $mod+Print exec maim --window $(xdotool getactivewindow) "/home/$USER/Pictures/$(date).jpg"
-bindsym Shift+Print exec maim --select "/home/$USER/Pictures/$(date).jpg"
+bindsym Print exec maim --noopengl "/home/$USER/Pictures/$(date).jpg"
+bindsym $mod+Print exec maim --noopengl --window $(xdotool getactivewindow) "/home/$USER/Pictures/$(date).jpg"
+bindsym Shift+Print exec maim --noopengl --select "/home/$USER/Pictures/$(date).jpg"
 
-bindsym Ctrl+$mod+s exec maim | xclip -selection clipboard -t image/png
-bindsym Ctrl+$mod+Print exec maim --window $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
-bindsym Shift+$mod+s exec maim --select | xclip -selection clipboard -t image/png
+bindsym Ctrl+$mod+s exec maim --noopengl | xclip -selection clipboard -t image/png
+bindsym Ctrl+$mod+Print exec maim --noopengl --window $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
+bindsym Shift+$mod+s exec maim --noopengl --select | xclip -selection clipboard -t image/png
 # Clipboard manager
 # bindsym $mod+Shift+v exec copyq toggle
 
