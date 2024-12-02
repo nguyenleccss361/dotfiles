@@ -39,6 +39,7 @@
     xdotool
     bat
     delta
+    i3-resurrect
 
     # font
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
