@@ -78,11 +78,12 @@
 
 (defalias
   ;; Layers
-  #nav (tap-hold 100 150 spc (layer-while-held navigation))
+  #nav (tap-hold 150 200 spc (layer-while-held navigation))
   #sym (tap-hold 150 200 esc (layer-while-held symbol))
   #num (tap-hold 150 200 tab (layer-while-held number))
   #nomod (tap-hold 100 500 (layer-switch base) (layer-switch nomods))
   
+  ;; Combined keys
   hyp (multi lsft lctl lmet ralt) ;; Right hyper
 
   ;; Home row mod
