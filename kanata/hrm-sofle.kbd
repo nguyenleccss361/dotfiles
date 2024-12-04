@@ -2,16 +2,16 @@
   esc   1     2     3     4     5             6     7     8     9     0     -
   tab   q     w     e     r     t             y     u     i     o     p     bspc
   caps  a     s     d     f     g             h     j     k     l     ;     '
-  lmet  z     x     c     v     b             n     m     ,     .     /     rsft
-        lalt  lctl  lsft  grv   spc           ret   =     [     ]     \
+  lmet  z     x     c     v     b             n     m     ,     .     /     rmet
+        lalt  rsft  lctl  lsft  spc           ret   =     [     ]     \
 )
 
 (deflayer base
-  _     _     _     _     _     _             _     _     _     _     _     _
+  grv   _     _     _     _     _             _     _     _     _     _     _
   _     _     _     _     _     _             _     _     _     _     _     _
   @caps @a    @s    @d    @f    _             _     @j    @k    @l    @;    _
   _     _     _     _     _     _             _     _     _     _     _     @#nomod
-        _     _     _     @#ms  @#nav         _     @#sym @#num @hyp  @#fun
+        _     @#ms  _     _     @#nav         @ret  @#sym @#num @hyp  @#fun
 )
 
 (deflayer symbol
@@ -40,9 +40,9 @@
 
 (deflayer mouse
   _     _     _     _     _     _             _     _     _     _     _     _
-  _     _     C-w   C-e   C-r   _             _     mlft  @ms↑  mrgt  mmid  _
-  _     C-a   C-s   C-d   C-f   _             _     @ms←  @ms↓  @ms→  _     _
-  _     C-z   C-x   C-c   C-v   _             @mwl  @mwd  @mwu  @mwr  _     _
+  _     _     _     _     _     _             _     mlft  @ms↑  mrgt  mmid  _
+  _     _     _     _     _     _             _     @ms←  @ms↓  @ms→  _     _
+  _     _     _     _     _     _             @mwl  @mwd  @mwu  @mwr  _     _
         _     _     _     _     _             _     _     _     _     _
 )
 
@@ -81,16 +81,16 @@
 (defalias
   ;; Layers
   #nav (tap-hold 100 150 spc (layer-while-held navigation))
-  #ms (tap-hold 150 200 grv (layer-while-held mouse))
-  #sym (tap-hold 150 200 = (layer-while-held symbol))
-  #num (tap-hold 150 200 [ (layer-while-held number))
-  #fun (tap-hold 150 200 \ (layer-while-held fun))
+  #ms (layer-while-held mouse)
+  #sym (layer-while-held symbol)
+  #num (layer-while-held number)
+  #fun (layer-while-held fun)
   #nomod (tap-hold 100 500 (layer-switch base) (layer-switch nomods))
   
   ;; Combined keys
   caps (tap-hold 150 200 esc lctl)
-  ret (tap-hold 150 200 ret lmeta)
-  hyp (tap-hold 150 200 ] (multi lsft lctl lmet ralt))
+  ret (tap-hold 150 200 ret lalt)
+  hyp (multi lsft lctl lmet ralt)
   cpy C-S-c
   pst C-S-v
   undo C-S-z
