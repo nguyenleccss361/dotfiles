@@ -11,7 +11,7 @@
   @#ms  _     _     _     _     _             _     _     _     _     _     _
   @caps @a    @s    @d    @f    _             _     @j    @k    @l    @;    _
   _     _     _     _     _     _             _     _     _     _     _     @#nomod
-        _     _     _     _     @#nav         @ret  @#sym @#num @hyp  @#fun
+        _     @hyp  _     _     @#nav         @ret  @#sym @#num @hyp  @#fun
 )
 
 (deflayer symbol
