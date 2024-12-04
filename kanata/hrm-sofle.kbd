@@ -8,10 +8,10 @@
 
 (deflayer base
   grv   _     _     _     _     _             _     _     _     _     _     _
-  _     _     _     _     _     _             _     _     _     _     _     _
+  @#ms  _     _     _     _     _             _     _     _     _     _     _
   @caps @a    @s    @d    @f    _             _     @j    @k    @l    @;    _
   _     _     _     _     _     _             _     _     _     _     _     @#nomod
-        _     @#ms  _     _     @#nav         @ret  @#sym @#num @hyp  @#fun
+        _     _     _     _     @#nav         @ret  @#sym @#num @hyp  @#fun
 )
 
 (deflayer symbol
@@ -81,14 +81,14 @@
 (defalias
   ;; Layers
   #nav (tap-hold 100 150 spc (layer-while-held navigation))
-  #ms (layer-while-held mouse)
+  #ms (tap-hold 100 300 tab (layer-while-held mouse))
   #sym (layer-while-held symbol)
   #num (layer-while-held number)
   #fun (layer-while-held fun)
   #nomod (tap-hold 100 500 (layer-switch base) (layer-switch nomods))
   
   ;; Combined keys
-  caps (tap-hold 150 200 esc lctl)
+  caps (tap-hold 100 150 esc lctl)
   ret (tap-hold 150 200 ret lalt)
   hyp (multi lsft lctl lmet ralt)
   cpy C-S-c
