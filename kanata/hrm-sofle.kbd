@@ -10,8 +10,8 @@
   _     _     _     _     _     _             _     _     _     _     _     _
   @#ms  _     _     _     _     _             _     _     _     _     _     @hyp
   @caps @a    @s    @d    @f    _             _     @j    @k    @l    @;    _
-  _     _     _     _     _     _             _     _     _     _     _     @#nomod
-        _     _     _     _     @#nav         @#sym @#num @#fun _     _
+  _     @z    _     _     _     _             _     _     _     _     _     @#nomod
+        _     _     _     @sft  @#nav         @#sym @#num @#fun XX    _
 )
 
 (deflayer symbol
@@ -19,7 +19,7 @@
   _     S-[   S-7   S-8   S-9   S-]           _     _     _     _     _     _
   _     S-;   S-4   S-5   S-6   S-=           _     _     _     _     _     _
   _     S-grv S-1   S-2   S-3   S-\           _     _     _     _     _     _
-        _     _     S-9   S-0   S--           _     _     _     _     _    
+        _     S-9   S-0   S--   @ctlsh        _     _     _     _     _    
 )
 
 (deflayer number
@@ -27,15 +27,15 @@
   _     [     7     8     9     ]             _     _     _     _     _     _
   _     ;     4     5     6     =             _     _     _     _     _     _
   _     grv   1     2     3     \             _     _     _     _     _     _
-        _     nlck  .     0     -             _     _     _     _     _
+        nlck  .     0     -     _             _     _     _     _     _
 )
 
 (deflayer navigation
   _     _     _     _     _     _             _     _      _     _     _     _
   _     M-1   M-2   M-3   M-4   M-5           M-6   M-7    M-8   M-9   M-0   del
-  _     _     _     @btab C-S-f @ftab         lft   down   up    rght  caps  _
-  _     @undo C-S-x @cpy  @pst  _             home  pgdn   pgup  end   ins   _
-        _     _     _     _     _             del   C-bspc _     _     _    
+  _     _     _     @btab @ftab _             lft   down   up    rght  caps  _
+  _     _     _     _     _     _             home  pgdn   pgup  end   ins   _
+        _     _     _     _     _             C-spc C-bspc _     _     _    
 )
 
 (deflayer mouse
@@ -52,6 +52,14 @@
   _     f11   f4    f5    f6    _             _     prev  vold  next  _     _
   _     f10   f1    f2    f3    _             _     _     _     _     _     _
         _     _     _     _     _             _     _     _     _     _
+)
+
+(deflayer shift
+  C-grv  C-1    C-2    C-3    C-4    C-5      C-6    C-7   C-8   C-9   C-0   C--
+  C-tab  C-q    C-w    C-e    C-r    C-t      C-y    C-u   C-i   C-o   C-p   C-\
+  C-caps C-a    C-s    C-d    C-f    C-g      C-h    C-j   C-k   C-l   C-;   C-'
+  C-lmet C-z    C-x    C-c    C-v    C-b      C-n    C-m   C-,   C-.   C-/   _
+         C-lalt C-rmet C-lctl C-lsft C-spc    C-bspc C-ret C-esc C-=   C-ralt
 )
 
 (deflayer nomods
@@ -80,8 +88,8 @@
 
 (defalias
   ;; Layers
-  #nav (tap-hold 100 150 spc (layer-while-held navigation))
-  #ms (tap-hold 100 300 tab (layer-while-held mouse))
+  #nav (tap-dance 200 spc (layer-while-held navigation))
+  #ms (tap-hold-release-keys 150 300 tab (layer-while-held mouse) (ret))
   #sym (tap-hold 100 150 bspc (layer-while-held symbol))
   #num (tap-hold 100 150 ret (layer-while-held number))
   #fun (tap-hold 100 150 esc (layer-while-held fun))
@@ -89,19 +97,19 @@
   
   ;; Combined keys
   caps (tap-hold 100 150 esc lctl)
-  hyp (multi lsft lctl lmet ralt)
-  cpy C-S-c
-  pst C-S-v
-  undo C-S-z
+  ctlsh (multi lctl lsft)
+  sft (tap-dance 200 ((layer-while-held shift) @ctlsh))
+  hyp (multi lctl lsft lmet ralt)
   btab C-S-tab
   ftab C-tab
+  ;; aret (multi (release-key tab) ret) ;; release tab if held and also press enter
 
   ;; Home row mod
   tap (multi
     (layer-switch nomods)
     (on-idle-fakekey to-base tap 20)
   )
-  z (tap-hold-release-keys 150 200 (multi z @tap) lmet $left-hand-keys)
+  ;; z (tap-hold-release-keys 150 200 (multi z @tap) @ctlsh $left-hand-keys)
   a (tap-hold-release-keys 150 200 (multi a @tap) lmet $left-hand-keys)
   s (tap-hold-release-keys 150 200 (multi s @tap) lalt $left-hand-keys)
   d (tap-hold-release-keys 100 150 (multi d @tap) lsft $left-hand-keys)
@@ -110,7 +118,6 @@
   k (tap-hold-release-keys 100 150 (multi k @tap) rsft $right-hand-keys)
   l (tap-hold-release-keys 150 200 (multi l @tap) ralt $right-hand-keys)
   ; (tap-hold-release-keys 150 200 (multi ; @tap) rmet $right-hand-keys)
-  / (tap-hold-release-keys 150 200 (multi / @tap) rmet $right-hand-keys)
 
   ;; Mouse
   ms↑ (movemouse-accel-up 1 1000 1 5)
