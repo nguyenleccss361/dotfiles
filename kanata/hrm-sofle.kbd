@@ -33,7 +33,7 @@
 (deflayer navigation
   _     _     _     _     _     _             _     _      _     _     _     _
   _     M-1   M-2   M-3   M-4   M-5           M-6   M-7    M-8   M-9   M-0   del
-  _     _     _     @btab @ftab _             lft   down   up    rght  caps  _
+  _     _     _     _     _     _             lft   down   up    rght  caps  _
   _     _     _     _     _     _             home  pgdn   pgup  end   ins   XX
         _     _     _     _     _             C-spc C-bspc _     _     _    
 )
@@ -93,8 +93,6 @@
   met (tap-dance 300 (lmet (multi lmet lsft) (multi lmet lsft lctl)))
   sft (tap-dance 300 (lsft (multi lsft lalt) (multi lsft lmet lalt)))
   hyp (multi lctl lsft lmet ralt)
-  btab C-S-tab
-  ftab C-tab
   ;; aret (multi (release-key tab) ret) ;; release tab if held and also press enter
 
   ;; Home row mod
