@@ -3,7 +3,7 @@
   grv   q     w     e     r     t             y     u     i     o     p     \
   caps  a     s     d     f     g             h     j     k     l     ;     '
   lsft  z     x     c     v     b             n     m     ,     .     /     f15
-        lalt  f13   lmet  lctl  spc           bspc  tab   ret   f14   ralt
+        lalt  f13   lmet  lctl  spc           bspc  ret   tab   f14   ralt
 )
 
 (deflayer base
@@ -82,9 +82,9 @@
   ;; Layers
   #nav (tap-hold 100 150 spc (layer-while-held navigation))
   #ms (tap-hold 150 200 grv (layer-while-held mouse))
-  #sym (tap-hold 100 150 tab (layer-while-held symbol))
+  #sym (tap-hold 100 150 ret (layer-while-held symbol))
   #num (tap-hold 100 150 esc (layer-while-held number))
-  #fun (tap-hold 100 150 ret (layer-while-held fun))
+  #fun (tap-hold 100 150 tab (layer-while-held fun))
   #nomod (tap-hold 100 500 (layer-switch base) (layer-switch nomods))
   
   ;; Combined key
