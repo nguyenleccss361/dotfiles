@@ -1,33 +1,33 @@
 (defsrc
-  grv   1     2     3     4     5             6     7     8     9     0     -
-  tab   q     w     e     r     t             y     u     i     o     p     \
+  esc   1     2     3     4     5             6     7     8     9     0     -
+  grv   q     w     e     r     t             y     u     i     o     p     \
   caps  a     s     d     f     g             h     j     k     l     ;     '
-  lmet  z     x     c     v     b             n     m     ,     .     /     ins
-        lalt  rmet  lctl  lsft  spc           bspc  ret   esc   =     ralt
+  lmet  z     x     c     v     b             n     m     ,     .     /     del
+        lalt  rmet  tab   lctl  spc           bspc  ret   f13   f14   ralt
 )
 
 (deflayer base
   _     _     _     _     _     _             _     _     _     _     _     _
   @#ms  _     _     _     _     _             _     _     _     _     _     @hyp
-  @caps @a    @s    @d    @f    _             _     @j    @k    @l    @;    _
-  _     @z    _     _     _     _             _     _     _     _     _     @#nomod
-        _     _     _     @sft  @#nav         @#sym @#num @#fun XX    _
+  @#num @a    @s    @d    @f    _             _     @j    @k    @l    @;    _
+  @smet z     _     _     _     _             _     _     _     _     _     @#nomod
+        _     _     @#sym @sctl @#nav         @bspc _     @#fun XX    _
 )
 
 (deflayer symbol
-  _     _     _     _     _     _             _     _     _     _     _     _
-  _     S-[   S-7   S-8   S-9   S-]           _     _     _     _     _     _
-  _     S-;   S-4   S-5   S-6   S-=           _     _     _     _     _     _
-  _     S-grv S-1   S-2   S-3   S-\           _     _     _     _     _     _
-        _     S-9   S-0   S--   @ctlsh        _     _     _     _     _    
+  _     f1    f2    f3    f4    f5            f6    f7    f8    f9    f10   f11
+  _     S-1   S-2   S-3   S-4   S-5           S-6   S-7   S-8   S-9   S-0   f12
+  S-grv grv   S-=   =     S-[   S-]           [     ]     -     S--   S-\   \
+  _     XX    XX    XX    XX    XX            XX    XX    XX    XX    XX    _
+        _     _     _     _     _             _     _     _     _     _    
 )
 
 (deflayer number
   _     _     _     _     _     _             _     _     _     _     _     _
-  _     [     7     8     9     ]             _     _     _     _     _     _
-  _     ;     4     5     6     =             _     _     _     _     _     _
-  _     grv   1     2     3     \             _     _     _     _     _     _
-        nlck  .     0     -     _             _     _     _     _     _
+  _     _     _     _     _     _             S-8   7     8     9     XX    _
+  _     _     _     _     _     _             -     4     5     6     /     _
+  _     _     _     _     _     _             S-=   1     2     3     ret   _
+        _     _     _     _     _             _     0     .     _     _
 )
 
 (deflayer navigation
@@ -48,18 +48,10 @@
 
 (deflayer fun
   _     A-1   A-2   A-3   A-4   A-5           A-6   A-7   A-8   A-9   A-0   _
-  _     f12   f7    f8    f9    prnt          _     mute  volu  pp    _     _
-  _     f11   f4    f5    f6    _             _     prev  vold  next  _     _
-  _     f10   f1    f2    f3    _             _     _     _     _     _     _
+  _     _     _     _     _     prnt          _     mute  volu  pp    _     _
+  _     _     _     _     _     _             _     prev  vold  next  _     _
+  _     _     _     _     _     _             _     _     _     _     _     _
         _     _     _     _     _             _     _     _     _     _
-)
-
-(deflayer shift
-  C-grv  C-1    C-2    C-3    C-4    C-5      C-6    C-7   C-8   C-9   C-0   C--
-  C-tab  C-q    C-w    C-e    C-r    C-t      C-y    C-u   C-i   C-o   C-p   C-\
-  C-caps C-a    C-s    C-d    C-f    C-g      C-h    C-j   C-k   C-l   C-;   C-'
-  C-lmet C-z    C-x    C-c    C-v    C-b      C-n    C-m   C-,   C-.   C-/   _
-         C-lalt C-rmet C-lctl C-lsft C-spc    C-bspc C-ret C-esc C-=   C-ralt
 )
 
 (deflayer nomods
@@ -88,17 +80,17 @@
 
 (defalias
   ;; Layers
-  #nav (tap-dance 200 spc (layer-while-held navigation))
-  #ms (tap-hold-release-keys 150 300 tab (layer-while-held mouse) (ret))
-  #sym (tap-hold 100 150 bspc (layer-while-held symbol))
-  #num (tap-hold 100 150 ret (layer-while-held number))
-  #fun (tap-hold 100 150 esc (layer-while-held fun))
+  #nav (tap-hold 100 150 spc (layer-while-held navigation))
+  #ms (tap-hold-release-keys 150 300 grv (layer-while-held mouse) (ret))
+  #sym (tap-hold 100 150 tab (layer-while-held symbol))
+  #num (tap-hold 100 150 esc (layer-while-held number))
+  #fun (tap-hold 100 150 f13 (layer-while-held fun))
   #nomod (tap-hold 100 500 (layer-switch base) (layer-switch nomods))
   
-  ;; Combined keys
-  caps (tap-hold 100 150 esc lctl)
-  ctlsh (multi lctl lsft)
-  sft (tap-dance 200 ((layer-while-held shift) @ctlsh))
+  ;; Combined key
+  bspc (tap-hold 100 150 bspc lsft)
+  sctl (tap-dance 300 (lctl (multi lctl lsft) (multi lctl lsft lalt)))
+  smet (tap-dance 300 (lmet (multi lmet lsft) (multi lmet lsft lctl)))
   hyp (multi lctl lsft lmet ralt)
   btab C-S-tab
   ftab C-tab
