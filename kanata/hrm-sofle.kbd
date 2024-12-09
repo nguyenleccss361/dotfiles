@@ -1,9 +1,9 @@
 (defsrc
   esc   1     2     3     4     5             6     7     8     9     0     -
   grv   q     w     e     r     t             y     u     i     o     p     \
-  caps  a     s     d     f     g             h     j     k     l     ;     '
+  tab   a     s     d     f     g             h     j     k     l     ;     '
   lsft  z     x     c     v     b             n     m     ,     .     /     f15
-        lalt  f13   lmet  lctl  spc           bspc  ret   tab   f14   ralt
+        lalt  f13   lmet  lctl  spc           bspc  ret   del   f14   ralt
 )
 
 (deflayer base
@@ -31,11 +31,11 @@
 )
 
 (deflayer navigation
-  _     _     _     _     _     _             _     _      _     _     _     _
-  _     M-1   M-2   M-3   M-4   M-5           M-6   M-7    M-8   M-9   M-0   del
-  _     _     _     _     _     _             lft   down   up    rght  caps  _
-  _     _     _     _     _     _             home  pgdn   pgup  end   ins   XX
-        _     _     _     _     _             C-spc C-bspc _     _     _    
+  _     _     _     _     _     _             _      _      _     _     _     _
+  _     M-1   M-2   M-3   M-4   M-5           M-6    M-7    M-8   M-9   M-0   del
+  _     _     _     _     _     _             lft    down   up    rght  caps  _
+  _     _     _     _     _     _             home   pgdn   pgup  end   ins   XX
+        _     _     _     _     _             C-bspc C-spc _     _     _    
 )
 
 (deflayer mouse
@@ -83,8 +83,8 @@
   #nav (tap-hold 100 150 spc (layer-while-held navigation))
   #ms (tap-hold 150 200 grv (layer-while-held mouse))
   #sym (tap-hold 100 150 ret (layer-while-held symbol))
-  #num (tap-hold 100 150 esc (layer-while-held number))
-  #fun (tap-hold 100 150 tab (layer-while-held fun))
+  #num (tap-hold 100 150 tab (layer-while-held number))
+  #fun (tap-hold 100 150 del (layer-while-held fun))
   #nomod (tap-hold 100 500 (layer-switch base) (layer-switch nomods))
   
   ;; Combined key
