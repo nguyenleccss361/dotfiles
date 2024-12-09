@@ -105,10 +105,10 @@
   s (tap-hold-release-keys 150 200 (multi s @tap) lalt $left-hand-keys)
   d (tap-hold-release-keys 100 150 (multi d @tap) lsft $left-hand-keys)
   f (tap-hold-release-keys 100 150 (multi f @tap) lctl $left-hand-keys)
-  j (tap-hold-release-keys 100 150 (multi j @tap) rctl $right-hand-keys)
-  k (tap-hold-release-keys 100 150 (multi k @tap) rsft $right-hand-keys)
-  l (tap-hold-release-keys 150 200 (multi l @tap) ralt $right-hand-keys)
-  ; (tap-hold-release-keys 150 200 (multi ; @tap) rmet $right-hand-keys)
+  j (tap-hold-release-keys 100 150 (multi j @tap) lctl $right-hand-keys)
+  k (tap-hold-release-keys 100 150 (multi k @tap) lsft $right-hand-keys)
+  l (tap-hold-release-keys 150 200 (multi l @tap) lalt $right-hand-keys)
+  ; (tap-hold-release-keys 150 200 (multi ; @tap) lmet $right-hand-keys)
 
   ;; Mouse
   ms↑ (movemouse-accel-up 1 1000 1 5)
