@@ -1,9 +1,9 @@
 (defsrc
-  esc   1     2     3     4     5             6     7     8     9     0     -
+  del   1     2     3     4     5             6     7     8     9     0     -
   grv   q     w     e     r     t             y     u     i     o     p     \
-  tab   a     s     d     f     g             h     j     k     l     ;     '
+  esc   a     s     d     f     g             h     j     k     l     ;     '
   lsft  z     x     c     v     b             n     m     ,     .     /     f15
-        lalt  f13   lmet  lctl  spc           bspc  ret   del   f14   ralt
+        lalt  f13   lmet  lctl  spc           bspc  ret   tab   f14   ralt
 )
 
 (deflayer base
@@ -83,8 +83,8 @@
   #nav (tap-hold 100 150 spc (layer-while-held navigation))
   #ms (tap-hold 150 200 grv (layer-while-held mouse))
   #sym (tap-hold 100 150 ret (layer-while-held symbol))
-  #num (tap-hold 100 150 tab (layer-while-held number))
-  #fun (tap-hold 100 150 del (layer-while-held fun))
+  #num (tap-hold 100 150 esc (layer-while-held number))
+  #fun (tap-hold 100 150 tab (layer-while-held fun))
   #nomod (tap-hold 100 500 (layer-switch base) (layer-switch nomods))
   
   ;; Combined key
