@@ -40,7 +40,8 @@
     bat
     delta
     i3-resurrect
-    dnsutils
+    dnsutil
+    telnet
 
     # font
     # (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
