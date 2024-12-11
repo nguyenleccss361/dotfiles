@@ -1,49 +1,62 @@
+(defcfg
+  concurrent-tap-hold        yes
+  movemouse-smooth-diagonals yes ;; non-smooth diagonals when drawing a line in some app
+)
+
 (defsrc
-  del   1     2     3     4     5             6     7     8     9     0     -
-  grv   q     w     e     r     t             y     u     i     o     p     \
+  caps  1     2     3     4     5             6     7     8     9     0     -
+  grv   q     w     e     r     t             y     u     i     o     p     del
   esc   a     s     d     f     g             h     j     k     l     ;     '
-  lsft  z     x     c     v     b             n     m     ,     .     /     f15
-        lalt  f13   lmet  lctl  spc           bspc  ret   tab   f14   ralt
+  lsft  z     x     c     v     b             n     m     ,     .     /     f16
+        lalt  f14   lmet  lctl  spc           bspc  ret   tab   f15   ralt
 )
 
 (deflayer base
   _     _     _     _     _     _             _     _     _     _     _     _
-  @#ms  _     _     _     _     _             _     _     _     _     _     @hyp
+  _     _     _     _     _     _             _     _     _     _     _     @hyper
   @#num @a    @s    @d    @f    _             _     @j    @k    @l    @;    _
   @sft  _     _     _     _     _             _     _     _     _     _     @#nomod
-        _     XX    @met  @ctl  @#nav         @bspc @#sym @#fun XX    _
+        @lalt  XX   @met  @ctl  @#nav         @#bs  @#sym @#fun XX   @ralt
 )
 
 (deflayer symbol
   _     f1    f2    f3    f4    f5            f6    f7    f8    f9    f10   f11
   _     S-1   S-2   S-3   S-4   S-5           S-6   S-7   S-8   S-9   S-0   f12
-  S-grv grv   S-=   =     S-[   S-]           [     ]     S--   -     S-\   \
-  _     XX    XX    XX    XX    XX            XX    XX    XX    XX    XX    XX
-        _     _     _     _     _             _     _     _     _     _    
+  S-grv grv   S-=   =     S-[   S-]           [     ]     S--   -     S-;   S-'
+  _     XX    XX    \     S-\   XX            _     _     S-,   S-.   S-/   XX
+        XX    XX    _     _     _             _     _     _     XX    XX
 )
 
 (deflayer number
   _     _     _     _     _     _             _     _     _     _     _     _
   _     _     _     _     _     _             S-8   7     8     9     XX    _
-  _     _     _     _     _     _             -     4     5     6     /     _
-  _     _     _     _     _     _             S-=   1     2     3     ret   XX
-        _     _     _     _     _             _     0     .     _     _
+  _     _     _     _     _     _             -     4     5     6     /     ret
+  _     _     _     _     _     _             S-=   1     2     3     XX    XX
+        XX    XX    _     _     _             _     0     .     XX    XX
 )
 
 (deflayer navigation
-  _     _     _     _     _     _             _      _      _     _     _     _
-  _     M-1   M-2   M-3   M-4   M-5           M-6    M-7    M-8   M-9   M-0   del
-  _     _     _     _     _     _             lft    down   up    rght  caps  _
-  _     _     _     _     _     _             home   pgdn   pgup  end   ins   XX
-        _     _     _     _     _             C-bspc C-spc _     _     _    
+  _     _     _     _     _     _             _      _     _     _     _     _
+  _     M-1   M-2   M-3   M-4   M-5           M-6    M-7   M-8   M-9   M-0   _
+  _     _     _     _     A-tab _             lft    down  up    rght  caps  _
+  _     _     _     _     @vim  _             home   pgdn  pgup  end   ins   XX
+        XX    XX    _     _     _             C-spc  C-ret _     XX    XX
 )
 
-(deflayer mouse
-  _     _     _     _     _     _             _     _     _     _     _     _
-  _     _     _     _     _     _             _     mlft  @ms↑  mrgt  mmid  _
-  _     _     _     _     _     _             _     @ms←  @ms↓  @ms→  _     _
-  _     _     _     _     _     _             @mwl  @mwd  @mwu  @mwr  _     XX
-        _     _     _     _     _             _     _     _     _     _
+(deflayer ctrl
+  _     C-1   C-2   C-3   C-4   C-5           C-6    C-7   C-8   C-9   C-0   C--
+  _     C-q   C-w   C-e   C-r   C-t           C-y    C-u   C-i   C-o   C-p   C-del
+  _     C-a   C-s   C-d   C-f   C-g           A-b    C-j   C-k   A-f   C-;   C-'
+  _     C-z   C-x   C-c   C-v   C-b           C-n    C-m   C-,   C-.   C-/   XX
+        XX    XX    _     _     _             C-bspc S-ret _     XX    XX
+)
+
+(deflayer shift
+  _     S-1   S-2   S-3   S-4   S-5           S-6   S-7   S-8   S-9   S-0   S--
+  S-grv S-q   S-w   S-e   S-r   S-t           S-y   S-u   S-i   S-o   S-p   S-del
+  _     S-a   S-s   S-d   S-f   S-g           S-h   S-j   S-k   S-l   S-;   S-'
+  _     S-z   S-x   S-c   S-v   S-b           S-n   S-m   S-,   S-.   S-/   XX
+        XX    XX    _     _     _             _     _     _     XX    XX
 )
 
 (deflayer fun
@@ -51,7 +64,15 @@
   _     A-1   A-2   A-3   A-4   A-5           A-6   A-7   A-8   A-9   A-0   _
   _     _     _     _     _     prnt          _     mute  volu  pp    _     _
   _     _     _     _     _     _             _     prev  vold  next  _     XX
-        _     _     _     _     _             _     _     _     _     _
+        XX    XX    _     _     _             _     _     _     XX    XX
+)
+
+(deflayer mouse
+  _     _     _     _     _     _             _     _     _     _     _     _
+  _     mlft  @ms↑  mrgt  mmid  _             _     _     _     _     _     _
+  _     @ms←  @ms↓  @ms→  @slw  _             _     _     _     _     _     _
+  _     @mwl  @mwd  @mwu  @mwr  _             _     _     _     _     _     XX
+        XX    XX    _     _     _             _     _     _     XX    XX
 )
 
 (deflayer nomods
@@ -59,7 +80,7 @@
   _     _     _     _     _     _             _     _     _     _     _     _
   _     _     _     _     _     _             _     _     _     _     _     _
   _     _     _     _     _     _             _     _     _     _     _     @#nomod
-        _     _     _     _     _             _     _     _     _     _
+        XX    XX    _     _     _             _     _     _     XX    XX
 )
 (deffakekeys
   to-base (layer-switch base)
@@ -80,20 +101,24 @@
 
 (defalias
   ;; Layers
-  #nav (tap-hold 100 150 spc (layer-while-held navigation))
-  #ms (tap-hold 150 200 grv (layer-while-held mouse))
-  #sym (tap-hold 100 150 ret (layer-while-held symbol))
-  #num (tap-hold 100 150 esc (layer-while-held number))
-  #fun (tap-hold 100 150 tab (layer-while-held fun))
-  #nomod (tap-hold 100 500 (layer-switch base) (layer-switch nomods))
+  #nav (tap-hold-press 100 150 spc (layer-while-held navigation))
+  #bs (tap-hold-press 100 150 bspc (layer-while-held shift))
+  #sym (tap-hold-press 100 150 ret (layer-while-held symbol))
+  #num (tap-hold-press 100 150 esc (layer-while-held number))
+  #fun (tap-hold-press 100 150 tab (layer-while-held fun))
+  #nomod (tap-hold-press 100 500 (layer-switch base) (layer-switch nomods))
   
   ;; Combined key
-  bspc (tap-hold 100 150 bspc lsft)
-  ctl (tap-dance 300 (lctl (multi lctl lsft) (multi lctl lsft lalt)))
-  met (tap-dance 300 (lmet (multi lmet lsft) (multi lmet lsft lctl)))
   sft (tap-dance 300 (lsft (multi lsft lalt) (multi lsft lmet lalt)))
-  hyp (multi lctl lsft lmet ralt)
+  ctl (tap-dance 300 ((layer-while-held ctrl) (multi lctl lsft) (multi lctl lsft lalt)))
+  met (tap-dance 300 (lmet (multi lmet lsft) (multi lmet lsft lctl)))
+  lalt (tap-dance 300 (lalt (multi lalt lctl) (multi lalt lmet)))
+  ralt (tap-dance 300 (lalt (multi lctl lmet) (multi lctl lmet lalt)))
+  hyper (tap-hold-press 150 200 del (multi lctl lsft lmet ralt))
   ;; aret (multi (release-key tab) ret) ;; release tab if held and also press enter
+
+  ;; Macro
+  vim (macro C-(x 50 v))
 
   ;; Home row mod
   tap (multi
@@ -119,4 +144,6 @@
   mwd (mwheel-down  50 120)
   mwl (mwheel-left  50 120)
   mwr (mwheel-right 50 120)
+  fst (movemouse-speed 200)
+  slw (movemouse-speed 10)
 )
