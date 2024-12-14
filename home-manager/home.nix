@@ -13,8 +13,8 @@
   };
 
   home = {
-    username = "nguyenlh6";
-    homeDirectory = "/home/nguyenlh6";
+    username = "finn";
+    homeDirectory = "/home/finn";
     stateVersion = "24.11";
   };
 
@@ -40,8 +40,8 @@
     bat
     delta
     i3-resurrect
-    dnsutil
-    telnet
+    dnsutils
+    inetutils
 
     # font
     # (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
