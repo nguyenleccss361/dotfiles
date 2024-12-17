@@ -31,7 +31,7 @@ bindsym Shift+Print exec maim --noopengl --select "/home/$USER/Pictures/$(date).
 
 bindsym Ctrl+$mod+s exec maim --noopengl | xclip -selection clipboard -t image/png
 bindsym Ctrl+$mod+Print exec maim --noopengl --window $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
-bindsym Shift+$mod+s exec maim --noopengl --select | xclip -selection clipboard -t image/png
+bindsym $mod+Shift+s exec maim --noopengl --select | xclip -selection clipboard -t image/png
 # Clipboard manager
 # bindsym $mod+Shift+v exec copyq toggle
 
