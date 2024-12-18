@@ -250,7 +250,7 @@ exec_always feh --bg-scale "/home/$USER/Pictures/Background/wallpaper.jpg"
 # Auto set workspace
 assign [class="obsidian"] $ws1
 assign [class="Vivaldi-stable"] $ws1
-assign [class="Code"] $ws2
-assign [class="alacritty"] $ws3
+assign [class="alacritty"] $ws2
+assign [class="Code"] $ws3
 assign [class="Google-chrome"] $ws4
 assign [class="Spotify"] $ws9
