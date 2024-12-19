@@ -38,9 +38,9 @@
 (deflayer navigation
   XX    _     _     _     _     _             _      _     _     _     _     _
   _     M-1   M-2   M-3   M-4   M-5           M-6    M-7   M-8   M-9   M-0   _
-  _     _     _     _     _     _             lft    down  up    rght  _     _
+  _     _     _     A-tab C-tab _             lft    down  up    rght  _     _
   _     _     _     _     @vim  _             home   pgdn  pgup  end   ins   XX
-        _     _     _     _     _             C-bspc S-ret A-tab _     _ 
+        _     _     _     _     _             C-bspc S-ret _     _     _ 
 )
 
 (deflayer ctrl
@@ -48,7 +48,7 @@
   _     C-q   C-w   C-e   C-r   C-t           C-y    C-u   C-i   C-o   C-p   C-del
   _     C-a   C-s   C-d   C-f   C-g           A-b    C-j   C-k   A-f   C-;   C-'
   _     C-z   C-x   C-c   C-v   C-b           C-n    C-m   C-,   C-.   C-/   XX
-        _     _     _     _     _             A-bspc C-ret C-tab _     _ 
+        _     _     _     _     _             A-bspc C-ret _     _     _ 
 )
 
 (deflayer sftbs
