@@ -29,11 +29,16 @@ bindsym Print exec maim --noopengl "/home/$USER/Pictures/$(date).jpg"
 bindsym $mod+Print exec maim --noopengl --window $(xdotool getactivewindow) "/home/$USER/Pictures/$(date).jpg"
 bindsym Shift+Print exec maim --noopengl --select "/home/$USER/Pictures/$(date).jpg"
 
-bindsym Ctrl+$mod+s exec maim --noopengl | xclip -selection clipboard -t image/png
-bindsym Ctrl+$mod+Print exec maim --noopengl --window $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
+bindsym $mod+Ctrl+s exec maim --noopengl | xclip -selection clipboard -t image/png
+bindsym $mod+Ctrl+Print exec maim --noopengl --window $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
 bindsym $mod+Shift+s exec maim --noopengl --select | xclip -selection clipboard -t image/png
+
 # Clipboard manager
 # bindsym $mod+Shift+v exec copyq toggle
+
+# Mouseless
+set $warpd $HOME/.nix-profile/bin/warpd
+bindsym $mod+Ctrl+Shift+x exec $warpd --hint
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status

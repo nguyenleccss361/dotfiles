@@ -43,6 +43,7 @@
     dnsutils
     inetutils
     autokey
+    warpd
 
     # font
     # (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })

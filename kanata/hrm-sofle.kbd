@@ -1,4 +1,5 @@
 (defcfg
+  process-unmapped-keys yes
   concurrent-tap-hold        yes
   movemouse-smooth-diagonals yes ;; non-smooth diagonals when drawing a line in some app
 )
@@ -38,7 +39,7 @@
 (deflayer navigation
   XX    _     _     _     _     _             _      _     _     _     _     _
   _     M-1   M-2   M-3   M-4   M-5           M-6    M-7   M-8   M-9   M-0   _
-  _     _     _     A-tab C-tab _             lft    down  up    rght  _     _
+  _     _     _     C-tab @ms   _             lft    down  up    rght  _     _
   _     _     _     _     @vim  _             home   pgdn  pgup  end   ins   XX
         _     _     _     _     _             C-bspc S-ret _     _     _ 
 )
@@ -129,6 +130,7 @@
 
   ;; Macro
   vim (macro C-(x 50 v))
+  ms (macro M-C-S-(x))
 
   ;; Home row mod
   tap (multi
