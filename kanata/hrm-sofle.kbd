@@ -6,10 +6,10 @@
 
 (defsrc
   f13   1     2     3     4     5             6     7     8     9     0     -
-  grv   q     w     e     r     t             y     u     i     o     p     del
-  esc   a     s     d     f     g             h     j     k     l     ;     '
+  esc   q     w     e     r     t             y     u     i     o     p     \
+  grv   a     s     d     f     g             h     j     k     l     ;     '
   lsft  z     x     c     v     b             n     m     ,     .     /     f14
-        =     lmet  lalt  lctl  spc           bspc  ret   tab   [     ]
+        =     lmet  lalt  lctl  spc           bspc  ret   del   [     ]
 )
 
 (deflayer base
@@ -117,13 +117,13 @@
 )
 
 (defalias
-  #num (tap-hold-press 150 200 esc (layer-while-held number))
+  #num (tap-dance 200 ((tap-hold 100 150 grv (layer-while-held number))))
   #sym (tap-hold-press 100 150 ret (layer-while-held symbol))
-  #fun (tap-hold-press 100 150 tab (layer-while-held fun))
+  #fun (tap-hold-press 100 150 del (layer-while-held fun))
   #nomod (tap-dance 500 ((layer-switch base) (layer-switch nomods)))
   ctab (tap-hold-press 100 150 tab (layer-while-held ctrl))
   sft (tap-dance 300 ((layer-while-held shift) (multi lsft lalt)))
-  alt (tap-dance 300 ((layer-while-held alt) (multi lctl lsft) (multi lctl lsft lalt)))
+  alt (tap-dance 200 ((tap-hold-press 100 150 esc (layer-while-held alt)) (multi lctl lsft) (multi lctl lsft lalt)))
   gui (tap-dance 300 (lmet (multi lmet lsft) (multi lmet lsft lctl)))
   fn (tap-dance 300 ((multi lctl lsft lmet ralt)))
   ;; aret (multi (release-key tab) ret) ;; release tab if held and also press enter
