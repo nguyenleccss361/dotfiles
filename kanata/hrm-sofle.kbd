@@ -6,77 +6,45 @@
 
 (defsrc
   f13   1     2     3     4     5             6     7     8     9     0     -
-  esc   q     w     e     r     t             y     u     i     o     p     \
-  grv   a     s     d     f     g             h     j     k     l     ;     '
-  lsft  z     x     c     v     b             n     m     ,     .     /     f14
-        =     lmet  lalt  lctl  spc           bspc  ret   del   [     ]
+  grv   q     w     e     r     t             y     u     i     o     p     =
+  esc   a     s     d     f     g             h     j     k     l     ;     '
+  lsft  z     x     c     v     b             n     m     ,     .     /     \
+        f14   lmet  lalt  lctl  spc           bspc  ret   del   [     ]
 )
 
 (deflayer base
   XX    _     _     _     _     _             _     _     _     _     _     _
   _     _     _     _     _     _             _     _     _     _     _     _
-  @#num @a    @s    @d    @f    _             _     @j    @k    @l    @;    _
-  @sft  _     _     _     _     _             _     _     _     _     _     @#nomod
-        @fn   @gui  @alt  @ctab @#nav         @#bs  @#sym @#fun _     _
+  @num  a     s     d     f     _             _     j     k     l     ;     _
+  @sft  _     _     _     _     _             _     _     _     _     _     @nomod
+        @fn   @gui  @alt @ctab @nav           @bs   @sym  @adel @fun  _
 )
 
 (deflayer symbol
   XX    f1    f2    f3    f4    f5            f6    f7    f8    f9    f10   f11
   _     S-1   S-2   S-3   S-4   S-5           S-6   S-7   S-8   S-9   S-0   f12
-  S-grv grv   S-=   =     S-[   S-]           [     ]     S--   -     S-;   S-'
-  _     XX    XX    \     S-\   XX            XX    XX    S-,   S-.   S-/   XX
-        _     _     _     _     _             _     _     _     _     _
+  grv   S-grv S-=   =     S-[   S-]           [     ]     S--   -     S-;   S-'
+  _     _     _     _     _     _             \     S-\   S-,   S-.   S-/   XX
+        _     _     _     _     C-spc         _     _     _     _     _
 )
 
 (deflayer number
   XX    _     _     _     _     _             _     _     _     _     _     _
-  _     _     _     _     _     _             -     7     8     9     XX    _
-  _     _     _     _     _     _             S-=   4     5     6     S-8   _
-  _     _     _     _     _     _             0     1     2     3     /     XX
-        _     _     _     _     _             _     ret   .     XX    XX
+  _     _     _     _     _     _             S-=   7     8     9     _     _ 
+  _     _     _     _     _     _             0     4     5     6     S-8   _ 
+  _     _     _     _     _     _             -     1     2     3     /     XX
+        _     _     _     _     _             _     ret   .     _     _ 
 )
 
 (deflayer navigation
-  XX    _     _     _     _     _             _      _     _     _     _     _
-  _     M-1   M-2   M-3   M-4   M-5           M-6    M-7   M-8   M-9   M-0   _
-  _     _     _     C-tab @ms   _             lft    down  up    rght  _     _
-  _     _     _     _     @vim  _             home   pgdn  pgup  end   ins   XX
-        _     _     _     _     _             C-bspc S-ret _     _     _ 
+  XX    _     _     _     _     _             _     _     _     _     _     _
+  _     M-1   M-2   M-3   M-4   M-5           M-6   M-7   M-8   M-9   M-0   _ 
+  _     _     _     C-tab @knav _             lft   down  up    rght  _     _ 
+  _     _     _     _     @vim  _             home  pgdn  pgup  end   ins   XX
+        _     _     _     _     _             @cbs  S-ret _     _     _ 
 )
 
-(deflayer ctrl
-  XX    C-1   C-2   C-3   C-4   C-5           C-6    C-7   C-8   C-9   C-0   C--
-  _     C-q   C-w   C-e   C-r   C-t           C-y    C-u   C-i   C-o   C-p   C-del
-  _     C-a   C-s   C-d   C-f   C-g           A-b    C-j   C-k   A-f   C-;   C-'
-  _     C-z   C-x   C-c   C-v   C-b           C-n    C-m   C-,   C-.   C-/   XX
-        _     _     _     _     _             A-bspc C-ret _     _     _ 
-)
-
-(deflayer sftbs
-  XX    S-1   S-2   S-3   S-4   S-5           S-6   S-7   S-8   S-9   S-0   S--
-  _     S-q   S-w   S-e   S-r   S-t           S-y   S-u   S-i   S-o   S-p   S-del
-  _     S-a   S-s   S-d   S-f   S-g           S-h   S-j   S-k   S-l   S-;   S-'
-  _     S-z   S-x   S-c   S-v   S-b           S-n   S-m   S-,   S-.   S-/   XX
-        _     _     _     _     _             _     _     _     _     _ 
-)
-
-(deflayer shift
-  XX    S-1   S-2   S-3   S-4   S-5           S-6   S-7   S-8   S-9   S-0   S--
-  _     S-q   S-w   S-e   S-r   S-t           S-y   S-u   S-i   S-o   S-p   S-del
-  _     S-a   S-s   S-d   S-f   S-g           S-h   S-j   S-k   S-l   S-;   S-'
-  _     S-z   S-x   S-c   S-v   S-b           S-n   S-m   S-,   S-.   S-/   XX
-        _     _     _     _     _             _     _     _     _     _ 
-)
-
-(deflayer alt
-  XX    A-1   A-2   A-3   A-4   A-5           A-6   A-7   A-8   A-9   A-0   A--  
-  _     A-q   A-w   A-e   A-r   A-t           A-y   A-u   A-i   A-o   A-p   A-del
-  _     A-a   A-s   A-d   A-f   A-g           A-h   A-j   A-k   A-l   A-;   A-'
-  _     A-z   A-x   A-c   A-v   A-b           A-n   A-m   A-,   A-.   A-/   XX
-        _     _     _     _     _             _     _     _     _     _ 
-)
-
-(deflayer fun
+(deflayer function
   XX    _     _     _     _     _             _     _     _     _     _     _
   _     A-1   A-2   A-3   A-4   A-5           A-6   A-7   A-8   A-9   A-0   _
   _     _     _     _     _     prnt          _     mute  volu  pp    _     _
@@ -84,70 +52,38 @@
         _     _     _     _     _             _     _     _     _     _ 
 )
 
-(deflayer mouse
-  XX    _     _     _     _     _             _     _     _     _     _     _
-  _     _     _     _     _     _             _     mlft  @ms↑  mrgt  mmid  _
-  _     _     _     _     _     _             _     @ms←  @ms↓  @ms→  @slw  _
-  _     _     _     _     _     _             _     @mwl  @mwd  @mwu  @mwr  XX
-        _     _     _     _     _             _     _     _     _     _ 
-)
-
 (deflayer nomods
   XX    _     _     _     _     _             _     _     _     _     _     _
   _     _     _     _     _     _             _     _     _     _     _     _
   _     _     _     _     _     _             _     _     _     _     _     _
-  _     _     _     _     _     _             _     _     _     _     _     @#nomod
+  _     _     _     _     _     _             _     _     _     _     _     @nomod
         _     _     _     _     _             _     _     _     _     _ 
-)
-(deffakekeys
-  to-base (layer-switch base)
-)
-
-(defvar
-  left-hand-keys (
-    q w e r t
-    a s d f g
-    z x c v b
-  )
-  right-hand-keys (
-    y u i o p
-    h j k l ;
-    n m , . /
-  )
 )
 
 (defalias
-  #num (tap-dance 200 ((tap-hold 100 150 grv (layer-while-held number))))
-  #sym (tap-hold-press 100 150 ret (layer-while-held symbol))
-  #fun (tap-hold-press 100 150 del (layer-while-held fun))
-  #nomod (tap-dance 500 ((layer-switch base) (layer-switch nomods)))
-  ctab (tap-hold-press 100 150 tab (layer-while-held ctrl))
-  sft (tap-dance 300 ((layer-while-held shift) (multi lsft lalt)))
-  alt (tap-dance 200 ((tap-hold-press 100 150 esc (layer-while-held alt)) (multi lctl lsft) (multi lctl lsft lalt)))
-  gui (tap-dance 300 (lmet (multi lmet lsft) (multi lmet lsft lctl)))
-  fn (tap-dance 300 ((multi lctl lsft lmet ralt)))
-  ;; aret (multi (release-key tab) ret) ;; release tab if held and also press enter
-
+  ;; Pinky
+  num (tap-hold 100 150 esc (layer-while-held number))
+  sft (tap-dance 200 (lsft (multi lctl lsft lalt)))
+  fn (tap-dance 200 ((multi lmet lsft lctl) (multi lctl lsft lmet ralt)))
+  nomod (tap-dance 300 (lctl (layer-switch nomods) (layer-switch base)))
+  
   ;; Macro
-  vim (macro C-(x 50 v))
-  ms (macro M-C-S-(x))
+  vim (macro C-(x 50 v))           ;; vim mode zsh
+  knav (macro M-C-S-(x))           ;; warpd mouseless
 
-  ;; Home row mod
-  tap (multi
-    (layer-switch nomods)
-    (on-idle-fakekey to-base tap 20)
-  )
-  a (tap-hold-release-keys 150 200 (multi a @tap) lmet $left-hand-keys)
-  s (tap-hold-release-keys 150 200 (multi s @tap) lalt $left-hand-keys)
-  d (tap-hold-release-keys 100 150 (multi d @tap) lsft $left-hand-keys)
-  f (tap-hold-release-keys 100 150 (multi f @tap) lctl $left-hand-keys)
-  j (tap-hold-release-keys 100 150 (multi j @tap) lctl $right-hand-keys)
-  k (tap-hold-release-keys 100 150 (multi k @tap) lsft $right-hand-keys)
-  l (tap-hold-release-keys 150 200 (multi l @tap) lalt $right-hand-keys)
-  ; (tap-hold-release-keys 150 200 (multi ; @tap) lmet $right-hand-keys)
-  #nav (tap-hold-release-keys 100 150 (multi spc @tap) (layer-while-held navigation) (spc))
-  #bs (tap-hold-release-keys 100 150 (multi bspc @tap) (layer-while-held sftbs) (bspc))
+  ;; chords
+  cbs C-bspc
 
+  ;; Thumb
+  gui (tap-dance 200 (lmet (multi lmet lsft)))
+  alt (tap-dance 200 (lalt (multi lctl lsft)))
+  ctab (tap-hold 100 150 tab lctl)
+  nav (tap-hold 100 150 spc (layer-while-held navigation))
+  bs (tap-hold 100 150 bspc lsft)
+  sym (tap-hold 100 150 ret (layer-while-held symbol))
+  adel (tap-hold 100 150 del lalt)
+  fun (tap-dance 200 (lmet (layer-while-held function)))
+  
   ;; Mouse
   ms↑ (movemouse-accel-up 1 1000 1 5)
   ms← (movemouse-accel-left 1 1000 1 5)
@@ -160,8 +96,97 @@
   fst (movemouse-speed 200)
   slw (movemouse-speed 10)
 
-  ;; chq (chord ctrl-qw q)
-  ;; chw (chord ctrl-qw w)
-)
 
+)
+;; aret (multi (release-key tab) ret) ;; release tab if held and also press enter
+;; chq (chord ctrl-qw q)
+;; chw (chord ctrl-qw w)
 ;; (defchords ctrl-qw 1000 (q w) (macro C-S-1 50 C-2))
+
+;; (deflayer base
+;;   XX    _     _     _     _     _             _     _     _     _     _     _
+;;   _     _     _     _     _     _             _     _     _     _     _     _
+;;   @num  @a    @s    @d    @f    _             _     @j    @k    @l    @;    _
+;;   @sft  _     _     _     _     _             _     _     _     _     _     @nomod
+;;         @fn   @gui  @alt @ctab @nav           @bs  @sym @fun    _     _
+;; )
+
+;; (deflayer ctrl
+;;   XX    C-1   C-2   C-3   C-4   C-5           C-6    C-7   C-8   C-9   C-0   C--
+;;   _     C-q   C-w   C-e   C-r   C-t           C-y    C-u   C-i   C-o   C-p   C-=
+;;   _     C-a   C-s   C-d   C-f   C-g           A-b    C-j   C-k   A-f   C-;   C-'
+;;   _     C-z   C-x   C-c   C-v   C-b           C-n    C-m   C-,   C-.   C-/   C-\
+;;         _     _     _     _     _             A-bspc C-ret C-del _     _ 
+;; )
+
+;; (deflayer sftbs
+;;   XX    S-1   S-2   S-3   S-4   S-5           S-6   S-7   S-8   S-9   S-0   S--
+;;   _     S-q   S-w   S-e   S-r   S-t           S-y   S-u   S-i   S-o   S-p   S-=
+;;   _     S-a   S-s   S-d   S-f   S-g           S-h   S-j   S-k   S-l   S-;   S-'
+;;   _     S-z   S-x   S-c   S-v   S-b           S-n   S-m   S-,   S-.   S-/   S-\
+;;         _     _     _     _     _             _     _     _     _     _ 
+;; )
+
+;; (deflayer shift
+;;   XX    S-1   S-2   S-3   S-4   S-5           S-6   S-7   S-8   S-9   S-0   S--
+;;   _     S-q   S-w   S-e   S-r   S-t           S-y   S-u   S-i   S-o   S-p   S-=
+;;   _     S-a   S-s   S-d   S-f   S-g           S-h   S-j   S-k   S-l   S-;   S-'
+;;   _     S-z   S-x   S-c   S-v   S-b           S-n   S-m   S-,   S-.   S-/   S-\
+;;         _     _     _     _     _             _     _     S-del _     _ 
+;; )
+
+;; (deflayer alt
+;;   XX    A-1   A-2   A-3   A-4   A-5           A-6   A-7   A-8   A-9   A-0   A--  
+;;   _     A-q   A-w   A-e   A-r   A-t           A-y   A-u   A-i   A-o   A-p   A-=
+;;   _     A-a   A-s   A-d   A-f   A-g           A-h   A-j   A-k   A-l   A-;   A-'
+;;   _     A-z   A-x   A-c   A-v   A-b           A-n   A-m   A-,   A-.   A-/   A-\
+;;         _     _     _     _     _             _     _     A-del _     _ 
+;; )
+
+;; (deflayer mouse
+;;   XX    _     _     _     _     _             _     _     _     _     _     _
+;;   _     _     _     _     _     _             _     mlft  @ms↑  mrgt  mmid  _
+;;   _     _     _     _     _     _             _     @ms←  @ms↓  @ms→  @slw  _
+;;   _     _     _     _     _     _             _     @mwl  @mwd  @mwu  @mwr  XX
+;;         _     _     _     _     _             _     _     _     _     _ 
+;; )
+
+  ;; Home row mod
+  ;; (deffakekeys
+  ;;   to-base (layer-switch base)
+  ;; )
+
+  ;; (defvar
+  ;;   left-hand-keys (
+  ;;     q w e r t
+  ;;     a s d f g
+  ;;     z x c v b
+  ;;   )
+  ;;   right-hand-keys (
+  ;;     y u i o p =
+  ;;     h j k l ; '
+  ;;     n m , . / \
+  ;;   )
+  ;; )
+
+  ;; tap (multi
+  ;;   (layer-switch nomods)
+  ;;   (on-idle-fakekey to-base tap 20)
+  ;; )
+  ;; a (tap-hold-release-keys 100 150 (multi a @tap) lmet $left-hand-keys)
+  ;; s (tap-hold-release-keys 100 150 (multi s @tap) lalt $left-hand-keys)
+  ;; d (tap-hold-release-keys 100 150 (multi d @tap) lsft $left-hand-keys)
+  ;; f (tap-hold-release-keys 100 150 (multi f @tap) lctl $left-hand-keys)
+  ;; j (tap-hold-release-keys 100 150 (multi j @tap) lctl $right-hand-keys)
+  ;; k (tap-hold-release-keys 100 150 (multi k @tap) lsft $right-hand-keys)
+  ;; l (tap-hold-release-keys 100 150 (multi l @tap) lalt $right-hand-keys)
+  ;; ; (tap-hold-release-keys 100 150 (multi ; @tap) lmet $right-hand-keys)
+
+;; c s
+;; c a
+;; c m
+;; c s a
+;; c s m
+;; c a m
+;; s a
+;; s a m
