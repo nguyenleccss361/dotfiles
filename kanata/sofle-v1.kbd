@@ -6,10 +6,10 @@
 
 (defsrc
   f13   1     2     3     4     5             6     7     8     9     0     -
-  grv   q     w     e     r     t             y     u     i     o     p     =
+  tab   q     w     e     r     t             y     u     i     o     p     =
   esc   a     s     d     f     g             h     j     k     l     ;     '
   lsft  z     x     c     v     b             n     m     ,     .     /     \
-        f14   lmet  lalt  lctl  spc           bspc  ret   del   [     ]
+        grv   lmet  lalt  lctl  spc           bspc  ret   del   [     ]
 )
 
 (deflayer base
@@ -24,7 +24,7 @@
   XX    f1    f2    f3    f4    f5            f6    f7    f8    f9    f10   f11
   _     S-1   S-2   S-3   S-4   S-5           S-6   S-7   S-8   S-9   S-0   f12
   grv   S-grv S-=   =     S-[   S-]           [     ]     S--   -     S-;   S-'
-  _     _     _     _     _     _             \     S-\   S-,   S-.   S-/   XX
+  _     _     _     _     _     _             \     S-\   S-,   S-.   S-/   _
         _     _     _     _     C-spc         _     _     _     _     _
 )
 
@@ -32,7 +32,7 @@
   XX    _     _     _     _     _             _     _     _     _     _     _
   _     _     _     _     _     _             S-=   7     8     9     _     _ 
   _     _     _     _     _     _             0     4     5     6     S-8   _ 
-  _     _     _     _     _     _             -     1     2     3     /     XX
+  _     _     _     _     _     _             -     1     2     3     /     _
         _     _     _     _     _             _     ret   .     _     _ 
 )
 
@@ -40,7 +40,7 @@
   XX    _     _     _     _     _             _     _     _     _     _     _
   _     M-1   M-2   M-3   M-4   M-5           M-6   M-7   M-8   M-9   M-0   _ 
   _     _     _     C-tab @knav _             lft   down  up    rght  _     _ 
-  _     _     _     _     @vim  _             home  pgdn  pgup  end   ins   XX
+  _     _     _     _     @vim  _             home  pgdn  pgup  end   ins   _
         _     _     _     _     _             @cbs  S-ret _     _     _ 
 )
 
@@ -48,7 +48,7 @@
   XX    _     _     _     _     _             _     _     _     _     _     _
   _     A-1   A-2   A-3   A-4   A-5           A-6   A-7   A-8   A-9   A-0   _
   _     _     _     _     _     prnt          _     mute  volu  pp    _     _
-  _     _     _     _     _     _             _     prev  vold  next  _     XX
+  _     _     _     _     _     _             _     prev  vold  next  _     _
         _     _     _     _     _             _     _     _     _     _ 
 )
 
