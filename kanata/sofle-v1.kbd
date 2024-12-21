@@ -17,7 +17,7 @@
   _     _     _     _     _     _             _     _     _     _     _     _
   @num  a     s     d     f     _             _     j     k     l     ;     _
   @sft  _     _     _     _     _             _     _     _     _     _     @nomod
-        @fn   @gui  @alt @ctab @nav           @bs   @sym  @adel @fun  _
+        @fn   @gui  @alt @ctab @nav           @bs   @sym  @adel @mfun _
 )
 
 (deflayer symbol
@@ -60,6 +60,23 @@
         _     _     _     _     _             _     _     _     _     _ 
 )
 
+(deffakekeys
+  to-base (layer-switch base)
+)
+
+(defvar
+  left-hand-keys (
+    q w e r t
+    a s d f g
+    z x c v b
+  )
+  right-hand-keys (
+    y u i o p =
+    h j k l ; '
+    n m , . / \
+  )
+)
+
 (defalias
   ;; Pinky
   num (tap-hold 100 150 esc (layer-while-held number))
@@ -73,16 +90,19 @@
 
   ;; chords
   cbs C-bspc
-
+ tap (multi
+    (layer-switch nomods)
+    (on-idle-fakekey to-base tap 20)
+  )
   ;; Thumb
   gui (tap-dance 200 (lmet (multi lmet lsft)))
   alt (tap-dance 200 (lalt (multi lctl lsft)))
   ctab (tap-hold 100 150 tab lctl)
-  nav (tap-hold 100 150 spc (layer-while-held navigation))
+  nav (tap-hold-release-keys 100 150 (multi spc @tap) (layer-while-held navigation) $left-hand-keys)
   bs (tap-hold 100 150 bspc lsft)
   sym (tap-hold 100 150 ret (layer-while-held symbol))
   adel (tap-hold 100 150 del lalt)
-  fun (tap-dance 200 (lmet (layer-while-held function)))
+  mfun (tap-dance 200 (lmet (layer-while-held function)))
   
   ;; Mouse
   ms↑ (movemouse-accel-up 1 1000 1 5)
