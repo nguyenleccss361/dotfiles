@@ -90,7 +90,7 @@
 
   ;; chords
   cbs C-bspc
- tap (multi
+  tap (multi
     (layer-switch nomods)
     (on-idle-fakekey to-base tap 20)
   )
@@ -98,7 +98,7 @@
   gui (tap-dance 200 (lmet (multi lmet lsft)))
   alt (tap-dance 200 (lalt (multi lctl lsft)))
   ctab (tap-hold-press 100 150 tab lctl)
-  nav (tap-hold-release-keys 100 150 (multi spc @tap) (layer-while-held navigation) $left-hand-keys)
+  nav (tap-hold-release-keys 100 100 (multi spc @tap) (layer-while-held navigation) $left-hand-keys)
   bs (tap-hold 100 150 bspc lsft)
   sym (tap-hold-press 100 150 ret (layer-while-held symbol))
   adel (tap-hold 100 150 del lalt)
