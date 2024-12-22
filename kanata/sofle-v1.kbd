@@ -97,10 +97,10 @@
   ;; Thumb
   gui (tap-dance 200 (lmet (multi lmet lsft)))
   alt (tap-dance 200 (lalt (multi lctl lsft)))
-  ctab (tap-hold 100 150 tab lctl)
+  ctab (tap-hold-press 100 150 tab lctl)
   nav (tap-hold-release-keys 100 150 (multi spc @tap) (layer-while-held navigation) $left-hand-keys)
   bs (tap-hold 100 150 bspc lsft)
-  sym (tap-hold 100 150 ret (layer-while-held symbol))
+  sym (tap-hold-press 100 150 ret (layer-while-held symbol))
   adel (tap-hold 100 150 del lalt)
   mfun (tap-dance 200 (lmet (layer-while-held function)))
   
