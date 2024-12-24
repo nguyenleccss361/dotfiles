@@ -38,7 +38,7 @@ bindsym $mod+Shift+s exec maim --noopengl --select | xclip -selection clipboard 
 
 # Mouseless
 set $warpd $HOME/.nix-profile/bin/warpd
-bindsym $mod+Ctrl+Shift+x exec $warpd --hint
+bindsym $mod+Shift+Ctrl+g exec $warpd --hint
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -58,7 +58,7 @@ tiling_drag modifier titlebar
 bindsym $mod+Return exec alacritty
 
 # kill focused window
-bindsym $mod+Shift+q kill
+bindsym $mod+x kill
 
 # change focus
 bindsym $mod+h focus left
@@ -141,7 +141,7 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 
 # Save and restore i3 layout
 set $i3_resurrect $HOME/.nix-profile/bin/i3-resurrect
-bindsym $mod+Shift+t exec $i3_resurrect restore
+bindsym $mod+Shift+x exec $i3_resurrect restore
 bindsym $mod+Shift+y exec $i3_resurrect save
 
 # reload the configuration file
@@ -238,7 +238,7 @@ bindsym XF86AudioPause exec playerctl pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 bindsym $mod+Shift+period exec systemctl suspend
-bindsym $mod+shift+x exec i3lock
+bindsym $mod+Ctrl+Shift+x exec i3lock
 bindsym $mod+d exec rofi -show run
 bindsym $mod+Shift+d exec krunner
 
