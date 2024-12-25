@@ -16,31 +16,31 @@
   XX    _     _     _     _     _             _     _     _     _     _     _
   _     _     _     _     _     _             _     _     _     _     _     _
   @num  _     _     _     _     _             _     _     _     _     @met; _
-  @sft  _     _     _     _     _             _     _     _     _     _     @nomod
-        @fn   @gui  @alt @ctab @nav           @bs   @sym  _     @mfun _
+  _     _     _     _     _     _             _     _     _     _     _     @nomod
+        @fn   @gui  @ealt @ctab @nav          @bs   @sym  _     @fun  @ms
 )
 
 (deflayer symbol
   XX    f1    f2    f3    f4    f5            f6    f7    f8    f9    f10   f11
   _     S-1   S-2   S-3   S-4   S-5           S-6   S-7   S-8   S-9   S-0   f12
   grv   S-grv S-=   =     S-[   S-]           [     ]     S--   -     S-;   S-'
-  _     _     _     _     _     _             \     S-\   S-,   S-.   S-/   _
+  _     _     _     \     S-\   _             _     _     S-,   S-.   S-/   _
         _     _     _     _     C-spc         _     _     _     _     _
 )
 
 (deflayer number
   XX    _     _     _     _     _             _     _     _     _     _     _
-  _     _     _     _     _     _             S-=   7     8     9     _     _ 
-  _     _     _     _     _     _             0     4     5     6     S-8   _ 
+  _     _     _     _     _     _             S-=   7     8     9     _     _
+  _     _     _     _     _     _             0     4     5     6     S-8   _
   _     _     _     _     _     _             -     1     2     3     /     _
         _     _     _     _     _             _     ret   .     _     _ 
 )
 
 (deflayer navigation
   XX    _     _     _     _     _             _     _     _     _     _     _
-  _     M-1   M-2   M-3   M-4   M-5           M-6   M-7   M-8   M-9   M-0   _ 
-  _     _     _     C-tab @knav _             lft   down  up    rght  _     _ 
-  _     _     _     _     @vim  _             home  pgdn  pgup  end   ins   _
+  _     M-1   M-2   M-3   M-4   M-5           M-6   M-7   M-8   M-9   M-0   _
+  _     _     A-tab C-tab @knav _             lft   down  up    rght  _     _
+  _     C-S-z @vim  C-S-c C-S-v _             home  pgdn  pgup  end   ins   _
         _     _     _     _     _             @cbs  S-ret _     _     _ 
 )
 
@@ -53,11 +53,19 @@
 )
 
 (deflayer meta-nav
-  XX    M-S-1 M-S-2 M-S-3 M-S-4 M-S-5         M-S-6 M-S-7 M-S-8 M-S-9 M-S-0 XX
-  _     M-1   M-2   M-3   M-4   M-5           M-6   M-7   M-8   M-9   M-0   XX
-  _     M-a   M-S-s M-S-d M-f   M-S-C-g       M-h   XX    XX    M-l   _     XX
-  _     M-z   M-x   M-c   M-v   M-b           M-n   M-m   M-,   M-.   M-/   XX
+  XX    M-S-1 M-S-2 M-S-3 M-S-4 M-S-5         M-S-6 M-S-7 M-S-8 M-S-9 M-S-0 _
+  _     M-1   M-2   M-3   M-4   M-5           M-6   M-7   M-8   M-9   M-0   _
+  _     M-a   M-S-s M-S-d M-f   M-S-C-g       M-h   M-j   M-k   M-l   _     _
+  _     M-z   M-x   M-c   M-v   M-b           M-n   M-m   M-,   M-.   M-/   _
         _     _     _     _     _             _     M-ret _     _     _ 
+)
+
+(deflayer mouse
+  XX    _     _     _     _     _             _     _     _     _     _     _
+  _     _     _     _     _     _             _     mlft  @ms↑  mrgt  mmid  _
+  _     _     _     _     _     _             _     @ms←  @ms↓  @ms→  @slw  _
+  _     _     _     _     _     _             _     @mwl  @mwd  @mwu  @mwr  _
+        _     _     _     _     _             _     _     _     _     _ 
 )
 
 (deflayer nomods
@@ -87,9 +95,9 @@
 
 (defalias
   ;; Pinky
-  num (tap-hold 100 150 esc (layer-while-held number))
-  sft (tap-dance 200 (lsft (multi lctl lsft lalt)))
-  fn (tap-dance 200 ((multi lmet lsft lctl) (multi lctl lsft lmet ralt)))
+  num (layer-while-held number)
+  fn (multi lctl lsft lmet ralt)
+  ms (layer-while-held mouse)
   nomod (tap-dance 300 (\ (layer-switch nomods) (layer-switch base)))
   
   ;; Macro
@@ -105,13 +113,13 @@
 
   ;; Thumb
   gui (tap-dance 200 (lmet (multi lmet lsft)))
-  alt (tap-dance 200 (lalt (multi lctl lsft)))
+  ealt (tap-hold-press 100 150 esc lalt)
   ctab (tap-hold-press 100 150 tab lctl)
   nav (tap-hold-release-keys 100 150 (multi spc @tap) (layer-while-held navigation) $left-hand-keys)
   bs (tap-hold 100 150 bspc lsft)
   sym (tap-hold-press 100 150 ret (layer-while-held symbol))
-  mfun (tap-dance 200 (lmet (layer-while-held function)))
   met; (tap-hold-press 100 150 ; (layer-while-held meta-nav))
+  fun (layer-while-held function)
 
   ;; Mouse
   ms↑ (movemouse-accel-up 1 1000 1 5)
@@ -199,14 +207,6 @@
 ;;   _     A-a   A-s   A-d   A-f   A-g           A-h   A-j   A-k   A-l   A-;   A-'
 ;;   _     A-z   A-x   A-c   A-v   A-b           A-n   A-m   A-,   A-.   A-/   A-\
 ;;         _     _     _     _     _             _     _     A-del _     _ 
-;; )
-
-;; (deflayer mouse
-;;   XX    _     _     _     _     _             _     _     _     _     _     _
-;;   _     _     _     _     _     _             _     mlft  @ms↑  mrgt  mmid  _
-;;   _     _     _     _     _     _             _     @ms←  @ms↓  @ms→  @slw  _
-;;   _     _     _     _     _     _             _     @mwl  @mwd  @mwu  @mwr  XX
-;;         _     _     _     _     _             _     _     _     _     _ 
 ;; )
 
 ;; Home row mod
