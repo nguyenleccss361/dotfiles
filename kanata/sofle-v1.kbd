@@ -1,5 +1,5 @@
 (defcfg
-  process-unmapped-keys yes
+  process-unmapped-keys      yes
   concurrent-tap-hold        yes
   movemouse-smooth-diagonals yes ;; non-smooth diagonals when drawing a line in some app
 )
@@ -17,7 +17,7 @@
   _     _     _     _     _     _             _     _     _     _     _     _
   @num  _     _     _     _     _             _     _     _     _     @met; _
   @sft  _     _     _     _     _             _     _     _     _     _     @nomod
-        @fn   @gui  @alt @ctab @nav           @bs   @sym  @mdel @mfun _
+        @fn   @gui  @alt @ctab @nav           @bs   @sym  _     @mfun _
 )
 
 (deflayer symbol
@@ -58,23 +58,6 @@
   _     M-a   M-S-s M-S-d M-f   M-S-C-g       M-h   XX    XX    M-l   _     XX
   _     M-z   M-x   M-c   M-v   M-b           M-n   M-m   M-,   M-.   M-/   XX
         _     _     _     _     _             _     M-ret _     _     _ 
-)
-
-(deflayer right-modifiers
-  XX    _     _     _     _     _             _     _     _     _     _     _
-  _     _     _     _     _     _             _     _     _     _     _     _
-  _     _     _     _     _     _             _     lctl  lsft  lalt  lmet  _
-  _     _     _     _     _     _             _     _     _     _     _     @nomod
-        _     _     _     _     _             _     _     _     _     _ 
-)
-    
-
-(deflayer left-modifiers
-  XX    _     _     _     _     _             _     _     _     _     _     _
-  _     _     _     _     _     _             _     _     _     _     _     _
-  _     lmet  lalt  lsft  lctl  _             _     _     _     _     _     _
-  _     _     _     _     _     _             _     _     _     _     _     @nomod
-        _     _     _     _     _             _     _     _     _     _ 
 )
 
 (deflayer nomods
@@ -119,17 +102,18 @@
     (layer-switch nomods)
     (on-idle 20 tap-vkey to-base)
   )
+
   ;; Thumb
   gui (tap-dance 200 (lmet (multi lmet lsft)))
   alt (tap-dance 200 (lalt (multi lctl lsft)))
-  ctab (tap-hold 100 150 tab lctl)
+  ctab (tap-hold-press 100 150 tab lctl)
   nav (tap-hold-release-keys 100 150 (multi spc @tap) (layer-while-held navigation) $left-hand-keys)
   bs (tap-hold 100 150 bspc lsft)
   sym (tap-hold-press 100 150 ret (layer-while-held symbol))
-  mdel (tap-hold 100 150 del (layer-while-held right-modifiers))
+  ;; mdel (tap-hold 100 150 del lalt)
   mfun (tap-dance 200 (lmet (layer-while-held function)))
   met; (tap-hold-press 100 150 ; (layer-while-held meta-nav))
-  
+
   ;; Mouse
   ms↑ (movemouse-accel-up 1 1000 1 5)
   ms← (movemouse-accel-left 1 1000 1 5)
@@ -142,8 +126,42 @@
   fst (movemouse-speed 200)
   slw (movemouse-speed 10)
 
-
 )
+
+;; Modifier
+;; c s
+;; c a
+;; c m
+;; c s a
+;; c s m
+;; c a m
+;; s a
+;; s a m
+(defchordsv2
+  (del a) lmet 500 first-release (nomods)
+  (del s) lalt 500 first-release (nomods)
+  (del d) lsft 500 first-release (nomods)
+  (del d s a) (multi lsft lalt lmet) 1000 first-release (nomods)
+  (del f) lctl 500 first-release (nomods)
+  (del f d) (multi lctl lsft) 1000 first-release (nomods)
+  (del f s) (multi lctl lalt) 1000 first-release (nomods)
+  (del f a) (multi lctl lmet) 1000 first-release (nomods)
+  (del f d s) (multi lctl lsft lalt) 1000 first-release (nomods)
+  (del f d a) (multi lctl lsft lmet) 1000 first-release (nomods)
+  (del f s a) (multi lctl lalt lmet) 1000 first-release (nomods)
+  (del j) lctl 500 first-release (nomods)
+  (del j k) (multi lctl lsft) 1000 first-release (nomods)
+  (del j l) (multi lctl lalt) 1000 first-release (nomods)
+  (del j ;) (multi lctl lmet) 1000 first-release (nomods)
+  (del j k l) (multi lctl lsft lalt) 1000 first-release (nomods)
+  (del j k ;) (multi lctl lsft lmet) 1000 first-release (nomods)
+  (del j l ;) (multi lctl lalt lmet) 1000 first-release (nomods)
+  (del k) lsft 500 first-release (nomods)
+  (del k l ;) (multi lsft lalt lmet) 1000 first-release (nomods)
+  (del l) lalt 500 first-release (nomods)
+  (del ;) lmet 500 first-release (nomods)
+)
+
 ;; aret (multi (release-key tab) ret) ;; release tab if held and also press enter
 ;; chq (chord ctrl-qw q)
 ;; chw (chord ctrl-qw w)
@@ -163,14 +181,6 @@
 ;;   _     C-a   C-s   C-d   C-f   C-g           A-b    C-j   C-k   A-f   C-;   C-'
 ;;   _     C-z   C-x   C-c   C-v   C-b           C-n    C-m   C-,   C-.   C-/   C-\
 ;;         _     _     _     _     _             A-bspc C-ret C-del _     _ 
-;; )
-
-;; (deflayer sftbs
-;;   XX    S-1   S-2   S-3   S-4   S-5           S-6   S-7   S-8   S-9   S-0   S--
-;;   _     S-q   S-w   S-e   S-r   S-t           S-y   S-u   S-i   S-o   S-p   S-=
-;;   _     S-a   S-s   S-d   S-f   S-g           S-h   S-j   S-k   S-l   S-;   S-'
-;;   _     S-z   S-x   S-c   S-v   S-b           S-n   S-m   S-,   S-.   S-/   S-\
-;;         _     _     _     _     _             _     _     _     _     _ 
 ;; )
 
 ;; (deflayer shift
@@ -197,33 +207,12 @@
 ;;         _     _     _     _     _             _     _     _     _     _ 
 ;; )
 
-  ;; Home row mod
-  ;; (deffakekeys
-  ;;   to-base (layer-switch base)
-  ;; )
-
-  ;; (defvar
-  ;;   left-hand-keys (
-  ;;     q w e r t
-  ;;     a s d f g
-  ;;     z x c v b
-  ;;   )
-  ;;   right-hand-keys (
-  ;;     y u i o p =
-  ;;     h j k l ; '
-  ;;     n m , . / \
-  ;;   )
-  ;; )
-
-  ;; tap (multi
-  ;;   (layer-switch nomods)
-  ;;   (on-idle-fakekey to-base tap 20)
-  ;; )
-  ;; a (tap-hold-release-keys 100 150 (multi a @tap) lmet $left-hand-keys)
-  ;; s (tap-hold-release-keys 100 150 (multi s @tap) lalt $left-hand-keys)
-  ;; d (tap-hold-release-keys 100 150 (multi d @tap) lsft $left-hand-keys)
-  ;; f (tap-hold-release-keys 100 150 (multi f @tap) lctl $left-hand-keys)
-  ;; j (tap-hold-release-keys 100 150 (multi j @tap) lctl $right-hand-keys)
-  ;; k (tap-hold-release-keys 100 150 (multi k @tap) lsft $right-hand-keys)
-  ;; l (tap-hold-release-keys 100 150 (multi l @tap) lalt $right-hand-keys)
-  ;; ; (tap-hold-release-keys 100 150 (multi ; @tap) lmet $right-hand-keys)
+;; Home row mod
+;; a (tap-hold-release-keys 100 150 (multi a @tap) lmet $left-hand-keys)
+;; s (tap-hold-release-keys 100 150 (multi s @tap) lalt $left-hand-keys)
+;; d (tap-hold-release-keys 100 150 (multi d @tap) lsft $left-hand-keys)
+;; f (tap-hold-release-keys 100 150 (multi f @tap) lctl $left-hand-keys)
+;; j (tap-hold-release-keys 100 150 (multi j @tap) lctl $right-hand-keys)
+;; k (tap-hold-release-keys 100 150 (multi k @tap) lsft $right-hand-keys)
+;; l (tap-hold-release-keys 100 150 (multi l @tap) lalt $right-hand-keys)
+;; ; (tap-hold-release-keys 100 150 (multi ; @tap) lmet $right-hand-keys)

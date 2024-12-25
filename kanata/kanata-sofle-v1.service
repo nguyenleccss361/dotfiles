@@ -3,10 +3,10 @@ Description=Kanata keyboard remapper
 Documentation=https://github.com/jtroo/kanata
 
 [Service]
-Environment=PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:%h/.nix-profile/bin/kanata
+Environment=PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:%h/.nix-profile/bin/kanata:%h/bin/kanata
 Environment=DISPLAY=:0
 Type=simple
-ExecStart=/bin/sh -c 'exec /home/$USER/.nix-profile/bin/kanata --cfg ${HOME}/.config/kanata/sofle-v1.kbd'
+ExecStart=/bin/sh -c 'exec /home/$USER/bin/kanata/kanata --cfg ${HOME}/.config/kanata/sofle-v1.kbd'
 Restart=no
 
 [Install]
