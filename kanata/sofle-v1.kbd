@@ -105,7 +105,7 @@
   ;; Macro
   vim (macro C-(x 50 v))           ;; vim mode zsh
   knav (macro M-C-S-(x))           ;; warpd mouseless
-  btab (macro C-S-A-(f12))           ;; Recent tabs
+  btab C-S-A-f12                   ;; Recent tabs
   ;spc (macro ; spc)               ;; semicolon then space for normal typing
   ;tab (macro ; tab)
   ;ret (macro ; ret)
