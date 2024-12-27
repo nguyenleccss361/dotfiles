@@ -85,6 +85,8 @@ alias vi='nvim'
 alias vim='/bin/vi'
 alias pn='pnpm'
 alias grep='grep -a --color=auto'
+alias ..='cd ..'
+alias ...='cd ../..'
 
 # zoxide (enhance cd)
 eval "$(zoxide init --cmd cd zsh)"
