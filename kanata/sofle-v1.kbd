@@ -82,16 +82,16 @@
 )
 
 (defvar
-  left-hand-keys (
-    q w e r t
-    a s d f g
-    z x c v b
+  letter-keys (
+    q w e r t y u i o p =
+    a s d f g h j k l ; '
+    z x c v b n m , . /
   )
-  right-hand-keys (
-    y u i o p =
-    h j k l ; '
-    n m , . /
-  )
+  ;; right-hand-keys (
+  ;;   y u i o p =
+  ;;   h j k l ; '
+  ;;   n m , . /
+  ;; )
 )
 
 (defalias
@@ -125,7 +125,7 @@
   gui (tap-dance 300 (lmet (multi lmet lsft)))
   ealt (tap-hold-press 100 150 esc lalt)
   ctab (tap-hold-press 100 150 tab lctl)
-  nav (tap-hold-release-keys 100 100 (multi spc @tap) (layer-while-held navigation) $left-hand-keys)
+  nav (tap-hold-release-keys 100 150 (multi spc @tap) (layer-while-held navigation) $letter-keys)
   bs (tap-hold 100 150 bspc lsft)
   sym (tap-hold-press 100 150 ret (layer-while-held symbol))
   met; (tap-hold-press 100 150 ; (layer-while-held meta-nav))
