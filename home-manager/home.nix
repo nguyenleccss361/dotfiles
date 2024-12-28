@@ -25,7 +25,7 @@
     gh
 
     # utils
-    kanata
+    # kanata
     fastfetch
     fzf
     jq
@@ -46,7 +46,7 @@
     warpd
 
     # font
-    # (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+    (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
   ];
 
   home.file = {

@@ -41,14 +41,14 @@
   XX    _     _     _     _     _             _     _     _     _     _     _
   _     M-1   M-2   M-3   M-4   M-5           M-6   M-7   M-8   M-9   M-0   _
   _     _     A-tab C-tab @knav _             lft   down  up    rght  _     _
-  _     C-S-z @vim  C-S-c C-S-v @btab         home  pgdn  pgup  end   ins   _
+  _     C-S-z @vim  C-S-c C-S-v _             home  pgdn  pgup  end   ins   _
         _     _     _     _     _             @cbs  S-ret _     _     _ 
 )
 
-(deflayer meta-nav
+(deflayer meta-fn
   XX    M-S-1 M-S-2 M-S-3 M-S-4 M-S-5         M-S-6 M-S-7 M-S-8 M-S-9 M-S-0 _
   _     M-1   M-2   M-3   M-4   M-5           M-6   M-7   M-8   M-9   M-0   _
-  _     M-a   M-S-s M-S-d M-f   M-S-C-g       M-h   M-j   M-k   M-l   _     _
+  _     M-a   M-S-s M-S-d @vita M-S-C-g       M-h   M-j   M-k   M-l   _     _
   _     M-z   M-x   M-c   M-v   M-b           M-n   M-m   M-,   M-.   M-/   _
         _     _     _     @;tab @;spc         _     @;ret _     _     _ 
 )
@@ -105,7 +105,7 @@
   ;; Macro
   vim (macro C-(x 50 v))           ;; vim mode zsh
   knav (macro M-C-S-(x))           ;; warpd mouseless
-  btab C-S-A-f12                   ;; Recent tabs
+  vita C-S-f2
   ;spc (macro ; spc)               ;; semicolon then space for normal typing
   ;tab (macro ; tab)
   ;ret (macro ; ret)
@@ -128,7 +128,7 @@
   nav (tap-hold-release-keys 100 150 (multi spc @tap) (layer-while-held navigation) $letter-keys)
   bs (tap-hold 100 150 bspc lsft)
   sym (tap-hold-press 100 150 ret (layer-while-held symbol))
-  met; (tap-hold-press 100 150 ; (layer-while-held meta-nav))
+  met; (tap-hold-press 100 150 ; (layer-while-held meta-fn))
   fun (layer-while-held function)
 
   ;; Mouse
