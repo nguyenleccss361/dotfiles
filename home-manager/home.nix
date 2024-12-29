@@ -44,6 +44,7 @@
     inetutils
     autokey
     warpd
+    espanso
 
     # font
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })

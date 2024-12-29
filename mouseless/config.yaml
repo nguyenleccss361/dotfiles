@@ -33,7 +33,7 @@ layers:
 - name: initial
   bindings:
     # when tab is held and another key pressed, activate mouse layer
-    z: tap-hold-next z ; toggle-layer mouse ; 500
+    tab: tap-hold-next tab ; toggle-layer mouse ; 500
 # a layer for mouse movement
 - name: mouse
   # when true, keys that are not mapped keep their original meaning
