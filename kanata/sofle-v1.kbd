@@ -48,7 +48,7 @@
 (deflayer meta-fn
   XX    M-S-1 M-S-2 M-S-3 M-S-4 M-S-5         M-S-6 M-S-7 M-S-8 M-S-9 M-S-0 _
   _     M-1   M-2   M-3   M-4   M-5           M-6   M-7   M-8   M-9   M-0   _
-  _     M-a   M-S-s M-S-d @vita @knav         M-h   M-j   M-k   M-l   _     _
+  _     @knav M-S-s M-S-d @vita @vitabar      M-h   M-j   M-k   M-l   _     _
   _     M-z   M-x   M-c   M-v   M-b           M-n   M-m   M-,   M-.   M-/   _
         _     _     _     @;tab @;spc         _     @;ret _     _     _ 
 )
@@ -105,7 +105,8 @@
   ;; Macro
   vim (macro C-(x 50 v))           ;; vim mode zsh
   knav M-S-C-g                     ;; warpd mouseless
-  vita C-S-f2
+  vita C-S-f2                      ;; vivaldi quick command
+  vitabar C-S-f3                   ;; vivaldi tab bar
   ;spc (macro ; spc)               ;; semicolon then space for normal typing
   ;tab (macro ; tab)
   ;ret (macro ; ret)
