@@ -92,9 +92,9 @@ alias ...='cd ../..'
 eval "$(zoxide init --cmd cd zsh)"
 
 # fnm
-FNM_PATH="/home/finn/.local/share/fnm"
+FNM_PATH="/home/nguyenlh6/.local/share/fnm"
 if [ -d "$FNM_PATH" ]; then
-  export PATH="/home/finn/.local/share/fnm:$PATH"
+  export PATH="/home/nguyenlh6/.local/share/fnm:$PATH"
   eval "`fnm env`"
 fi
 
