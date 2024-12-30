@@ -6,7 +6,7 @@ Documentation=https://github.com/jtroo/kanata
 Environment=PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:%h/.nix-profile/bin/kanata:%h/bin/kanata
 Environment=DISPLAY=:0
 Type=simple
-ExecStart=/bin/sh -c 'exec /home/$USER/bin/kanata/kanata --cfg ${HOME}/.config/kanata/sofle-v1.kbd'
+ExecStart=/bin/sh -c 'exec /home/$USER/bin/kanata/kanata --cfg ${HOME}/.config/kanata/sofle-v1.kbd --cfg ${HOME}/.config/kanata/brick-hrm.kbd'
 Restart=no
 
 [Install]

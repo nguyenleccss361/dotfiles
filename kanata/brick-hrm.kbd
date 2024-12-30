@@ -48,7 +48,7 @@
   _     _     _     _     _     _          _     _     _     _     _     _          _     _
   _     _     _     _     _     _          _     _     _     _     _     _          _     _
   _     _     _     _     _     _          _     _     _     _     _     _          _
-  _     _     _     _     _     _          _     _     _     _     _     @#nomod
+  @lay2 _     _     _     _     _          _     _     _     _     _     @#nomod
   _     _     _                 _                      _     _
 )
 (deffakekeys
@@ -72,10 +72,11 @@
   ;; Layers
   #nav (tap-hold 150 200 spc (layer-while-held navigation))
   #sym (tap-hold 150 200 esc (layer-while-held symbol))
-  #nomod (tap-hold 100 500 (layer-switch base) (layer-switch nomods))
+  #nomod (tap-dance 300 (\ (layer-switch nomods) (layer-switch base)))
   
   ;; Combined keys
   hyp (multi lsft lctl lmet ralt) ;; Right hyper
+  lay2 lrld-next
 
   ;; Home row mod
   tap (multi

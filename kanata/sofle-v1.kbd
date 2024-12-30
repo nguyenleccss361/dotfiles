@@ -55,7 +55,7 @@
 
 (deflayer function
   XX    _     _     _     _     _             _     _     _     _     _     _
-  _     _     _     _     _     nlck          _     _     _     _     _     _
+  @quit _     _     _     _     nlck          _     _     _     _     _     _
   _     _     _     _     _     prnt          _     mute  volu  pp    _     _
   _     _     _     _     _     _             _     prev  vold  next  _     _
         _     _     _     _     _             _     _     _     _     _ 
@@ -73,7 +73,7 @@
   XX    _     _     _     _     _             _     _     _     _     _     _
   _     _     _     _     _     _             _     _     _     _     _     _
   _     _     _     _     _     _             _     _     _     _     _     _
-  _     _     _     _     _     _             _     _     _     _     _     @nomod
+  @lay2 _     _     _     _     _             _     _     _     _     _     @nomod
         _     _     _     _     _             _     _     _     _     _ 
 )
 
@@ -101,13 +101,17 @@
   fn (multi lctl lsft lmet ralt)
   ms (layer-while-held mouse)
   nomod (tap-dance 300 (\ (layer-switch nomods) (layer-switch base)))
+  lay2 lrld-next
   
   ;; Macro
   vim (macro C-(x 50 v))           ;; vim mode zsh
   knav M-S-C-g                     ;; warpd mouseless
   vita C-S-f2                      ;; vivaldi quick command
   vitabar C-S-f3                   ;; vivaldi tab bar
-  ;spc (macro ; spc)               ;; semicolon then space for normal typing
+  quit (macro C-(spc 50 esc))      ;; force quit kanata
+
+  ;; handle semicolon for normal typing
+  ;spc (macro ; spc)               
   ;tab (macro ; tab)
   ;ret (macro ; ret)
 
