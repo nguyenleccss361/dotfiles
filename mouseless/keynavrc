@@ -1,2 +1,2 @@
-ctrl+semicolon start, grid-nav on, grid 13x13    # activate grid
-space warp, click 1, end                 # jump on grid then exit and launch xmouseless
+ctrl+shift+alt+p start, grid-nav on, grid 14x14  # activate grid
+space warp,sh "warpd --normal",end               # jump on grid then exit and launch warpd

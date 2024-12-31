@@ -18,7 +18,7 @@
   _     _     _     _     _     _             _     _     _     _     _     _
   @num  _     _     _     _     _             _     _     _     _     @met; _
   @sft  _     _     _     _     _             _     _     _     _     _     @nomod
-        @fn   @gui  @ealt @ctab @nav          @bs   @sym  _     @fun  @ms
+        @fn   @gui  @ealt @ctab @nav          @bs   @sym  @adel @fun  @ms
 )
 
 (deflayer symbol
@@ -41,7 +41,7 @@
   XX    _     _     _     _     _             _     _     _     _     _     _
   _     M-1   M-2   M-3   M-4   M-5           M-6   M-7   M-8   M-9   M-0   _
   _     _     _     _     _     _             lft   down  up    rght  _     _
-  _     C-S-z @vim  C-S-c C-S-v _             home  pgdn  pgup  end   ins   _
+  _     C-S-z _     C-S-c C-S-v _             home  pgdn  pgup  end   ins   _
         _     _     _     _     _             @cbs  S-ret _     _     _ 
 )
 
@@ -105,7 +105,8 @@
   
   ;; Macro
   vim (macro C-(x 50 v))           ;; vim mode zsh
-  knav M-S-C-g                     ;; warpd mouseless
+  wnav M-S-C-g                     ;; warpd
+  knav C-S-A-p                     ;; keynav
   vita C-S-f2                      ;; vivaldi quick command
   vitabar C-S-f3                   ;; vivaldi tab bar
   quit (macro C-(spc 50 esc))      ;; force quit kanata
@@ -133,6 +134,7 @@
   nav (tap-hold-release-keys 100 150 (multi spc @tap) (layer-while-held navigation) $letter-keys)
   bs (tap-hold 100 150 bspc lsft)
   sym (tap-hold-press 100 150 ret (layer-while-held symbol))
+  adel (tap-hold-press 100 150 del lalt)
   met; (tap-hold-press 100 150 ; (layer-while-held meta-fn))
   fun (layer-while-held function)
 
@@ -150,34 +152,34 @@
 )
 
 ;; Modifier
-(defchordsv2
-  (del f) lctl 10000 first-release (nomods)
-  (del f d) (multi lctl lsft) 10000 first-release (nomods)
-  (del f s) (multi lctl lalt) 10000 first-release (nomods)
-  (del f a) (multi lctl lmet) 10000 first-release (nomods)
-  (del f d s) (multi lctl lsft lalt) 10000 first-release (nomods)
-  (del f d a) (multi lctl lsft lmet) 10000 first-release (nomods)
-  (del f s a) (multi lctl lalt lmet) 10000 first-release (nomods)
-  (del d) lsft 10000 first-release (nomods)
-  (del d a) (multi lsft lmet) 10000 first-release (nomods)
-  (del d s a) (multi lsft lalt lmet) 10000 first-release (nomods)
-  (del s) lalt 10000 first-release (nomods)
-  (del a) lmet 10000 first-release (nomods)
+;; (defchordsv2
+;;   (del f) lctl 10000 first-release (nomods)
+;;   (del f d) (multi lctl lsft) 10000 first-release (nomods)
+;;   (del f s) (multi lctl lalt) 10000 first-release (nomods)
+;;   (del f a) (multi lctl lmet) 10000 first-release (nomods)
+;;   (del f d s) (multi lctl lsft lalt) 10000 first-release (nomods)
+;;   (del f d a) (multi lctl lsft lmet) 10000 first-release (nomods)
+;;   (del f s a) (multi lctl lalt lmet) 10000 first-release (nomods)
+;;   (del d) lsft 10000 first-release (nomods)
+;;   (del d a) (multi lsft lmet) 10000 first-release (nomods)
+;;   (del d s a) (multi lsft lalt lmet) 10000 first-release (nomods)
+;;   (del s) lalt 10000 first-release (nomods)
+;;   (del a) lmet 10000 first-release (nomods)
   
-  (del j) lctl 10000 first-release (nomods)
-  (del j k) (multi lctl lsft) 10000 first-release (nomods)
-  (del j l) (multi lctl lalt) 10000 first-release (nomods)
-  (del j ;) (multi lctl lmet) 10000 first-release (nomods)
-  (del j k l) (multi lctl lsft lalt) 10000 first-release (nomods)
-  (del j k ;) (multi lctl lsft lmet) 10000 first-release (nomods)
-  (del j l ;) (multi lctl lalt lmet) 10000 first-release (nomods)
-  (del k) lsft 10000 first-release (nomods)
-  (del k ;) (multi lsft lmet) 10000 first-release (nomods)
-  (del k l ;) (multi lsft lalt lmet) 10000 first-release (nomods)
-  (del l) lalt 10000 first-release (nomods)
-  (del l ;) (multi lalt lmet) 10000 first-release (nomods)
-  (del ;) lmet 10000 first-release (nomods)
-)
+;;   (del j) lctl 10000 first-release (nomods)
+;;   (del j k) (multi lctl lsft) 10000 first-release (nomods)
+;;   (del j l) (multi lctl lalt) 10000 first-release (nomods)
+;;   (del j ;) (multi lctl lmet) 10000 first-release (nomods)
+;;   (del j k l) (multi lctl lsft lalt) 10000 first-release (nomods)
+;;   (del j k ;) (multi lctl lsft lmet) 10000 first-release (nomods)
+;;   (del j l ;) (multi lctl lalt lmet) 10000 first-release (nomods)
+;;   (del k) lsft 10000 first-release (nomods)
+;;   (del k ;) (multi lsft lmet) 10000 first-release (nomods)
+;;   (del k l ;) (multi lsft lalt lmet) 10000 first-release (nomods)
+;;   (del l) lalt 10000 first-release (nomods)
+;;   (del l ;) (multi lalt lmet) 10000 first-release (nomods)
+;;   (del ;) lmet 10000 first-release (nomods)
+;; )
 
 ;; aret (multi (release-key tab) ret) ;; release tab if held and also press enter
 ;; chq (chord ctrl-qw q)
