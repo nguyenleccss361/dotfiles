@@ -69,6 +69,14 @@
         _     _     _     _     _             _     _     _     _     _ 
 )
 
+(deflayer nomods4Typing
+  XX    _     _     _     _     _             _     _     _     _     _     _
+  _     _     _     _     _     _             _     _     _     _     _     _
+  _     _     _     _     _     _             _     _     _     _     _     _
+  _     _     _     _     _     _             _     _     _     _     _     _
+        _     _     _     _     _             _     _     _     _     _ 
+)
+
 (deflayer nomods
   XX    _     _     _     _     _             _     _     _     _     _     _
   _     _     _     _     _     _             _     _     _     _     _     _
@@ -112,14 +120,14 @@
   quit (macro C-(spc 50 esc))      ;; force quit kanata
 
   ;; handle semicolon for normal typing
-  ;spc (macro ; spc)               
+  ;spc (macro ; spc)
   ;tab (macro ; tab)
   ;ret (macro ; ret)
 
   ;; chords
   cbs C-bspc
   tap (multi
-    (layer-switch nomods)
+    (layer-switch nomods4Typing)
     (on-idle 20 tap-vkey to-base)
   )
   cnav (multi
