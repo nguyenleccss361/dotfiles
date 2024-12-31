@@ -44,6 +44,7 @@
     inetutils
     autokey
     warpd
+    keynav
     espanso
 
     # font
