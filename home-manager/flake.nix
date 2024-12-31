@@ -19,7 +19,7 @@
   in {
     # home-manager --flake .#your-username@your-hostname
     homeConfigurations = {
-      "nguyenlh6" = home-manager.lib.homeManagerConfiguration {
+      "finn" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
         extraSpecialArgs = {inherit inputs outputs;};
         modules = [./home.nix];
