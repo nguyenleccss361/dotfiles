@@ -23,6 +23,7 @@
     neovim
     zsh
     gh
+    tmux
 
     # utils
     # kanata

@@ -1,2 +1,2 @@
-ctrl+shift+alt+p start, grid-nav on, grid 14x14  # activate grid
+ctrl+shift+alt+p start, grid-nav on, grid 26x26  # activate grid
 space warp,sh "warpd --normal",end               # jump on grid then exit and launch warpd
