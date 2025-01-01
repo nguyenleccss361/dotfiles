@@ -18,7 +18,7 @@
   _     _     _     _     _     _             _     _     _     _     _     _
   @num  _     _     _     _     _             _     _     _     _     @met; _
   @sft  _     _     _     _     _             _     _     _     _     _     @nomod
-        @fn   @gui  @ealt @ctab @nav          @bs   @sym  @adel @fun  @ms
+        @fn   @gui  @ealt @ctab @nav          @bs   @sym  @adel @mofn @ms
 )
 
 (deflayer symbol
@@ -58,6 +58,22 @@
   @quit _     _     _     _     nlck          _     _     _     _     _     _
   _     _     _     _     _     prnt          _     mute  volu  pp    _     _
   _     _     _     _     _     _             _     prev  vold  next  _     _
+        _     _     _     _     _             _     _     _     _     _ 
+)
+
+(deflayer left-modifier
+  XX    _     _     _     _     _             _     _     _     _     _     _
+  _     _     _     _     _     _             _     _     _     _     _     _
+  _     lmet  lalt  lsft  lctl  _             _     _     _     _     _     _
+  _     _     _     _     _     _             _     _     _     _     _     _
+        _     _     _     _     _             _     _     _     _     _ 
+)
+
+(deflayer right-modifier
+  XX    _     _     _     _     _             _     _     _     _     _     _
+  _     _     _     _     _     _             _     _     _     _     _     _
+  _     _     _     _     _     _             _     lctl  lsft  lalt  lmet  _
+  _     _     _     _     _     _             _     _     _     _     _     _
         _     _     _     _     _             _     _     _     _     _ 
 )
 
@@ -136,7 +152,7 @@
   )
 
   ;; Thumb
-  gui (tap-dance 300 (lmet (multi lmet lsft)))
+  gui (tap-dance 500 (lmet (layer-while-held left-modifier)))
   ealt (tap-hold-press 100 150 esc lalt)
   ctab (tap-hold-press 100 150 tab lctl)
   nav (tap-hold-release-keys 100 150 (multi spc @tap) (layer-while-held navigation) $letter-keys)
@@ -144,7 +160,7 @@
   sym (tap-hold-press 100 150 ret (layer-while-held symbol))
   adel (tap-hold-press 100 150 del lalt)
   met; (tap-hold-press 100 150 ; (layer-while-held meta-fn))
-  fun (layer-while-held function)
+  mofn (tap-dance 500 ((layer-while-held function) (layer-while-held right-modifier)))
 
   ;; Mouse
   ms↑ (movemouse-accel-up 1 1000 1 5)
