@@ -78,8 +78,8 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
 # Aliases
-alias ls='ls --color'
-alias ll='ls -lAhF --color'
+alias ls='ls --color=auto'
+alias ll='ls -lAhF --color=auto'
 alias cl='clear'
 alias vi='nvim'
 alias vim='/bin/vi'
@@ -87,14 +87,17 @@ alias pn='pnpm'
 alias grep='grep -a --color=auto'
 alias ..='cd ..'
 alias ...='cd ../..'
+alias kanataup="$HOME/bin/kanata/start_kanata_service.sh"
+alias kanatadown="systemctl --user stop kanata-office.service"
+alias kanatast="systemctl --user status kanata-office.service"
 
 # zoxide (enhance cd)
 eval "$(zoxide init --cmd cd zsh)"
 
 # fnm
-FNM_PATH="/home/nguyenlh6/.local/share/fnm"
+FNM_PATH="$HOME/.local/share/fnm"
 if [ -d "$FNM_PATH" ]; then
-  export PATH="/home/nguyenlh6/.local/share/fnm:$PATH"
+  export PATH="$HOME/.local/share/fnm:$PATH"
   eval "`fnm env`"
 fi
 

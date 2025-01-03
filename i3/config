@@ -36,9 +36,13 @@ bindsym $mod+Shift+s exec maim --noopengl --select | xclip -selection clipboard 
 # Clipboard manager
 # bindsym $mod+Shift+v exec copyq toggle
 
-# Mouseless
+# Mouseless & Keyboard remap
 set $warpd $HOME/.nix-profile/bin/warpd
+set $keynav $HOME/.nix-profile/bin/keynav
+set $kanata_startup $HOME/scripts/kanata/start_service.sh
 bindsym $mod+Shift+Ctrl+g exec $warpd --hint
+exec --no-startup-id $keynav daemonize
+exec --no-startup-id $kanata_startup
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
