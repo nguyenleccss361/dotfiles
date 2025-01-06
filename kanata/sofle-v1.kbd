@@ -55,9 +55,9 @@
 
 (deflayer function
   XX    _     _     _     _     _             _     _     _     _     _     _
-  @quit _     _     _     _     nlck          _     _     _     _     _     _
-  _     _     _     _     _     prnt          _     mute  volu  pp    _     _
-  _     _     _     _     _     _             _     prev  vold  next  _     _
+  @quit _     _     _     _     _             _     _     _     _     _     _
+  _     _     _     _     _     _             prev  vold  volu  next  _     _
+  _     _     _     _     _     _             nlck  mute  pp    prnt  _     _
         _     _     _     _     _             _     _     _     _     _ 
 )
 
