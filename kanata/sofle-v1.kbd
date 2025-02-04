@@ -18,7 +18,7 @@
   _     _     _     _     _     _             _     _     _     _     _     _
   @num  _     _     _     _     _             _     _     _     _     @met; _
   @sft  _     _     _     _     _             _     _     _     _     _     @nomod
-        @fn   @gui  @ealt @ctab @nav          @bs   @sym  @adel @mofn @ms
+        @fn   @gui  @aEsc @ctab @nav          @bs   @sym  @aDel @mofn @ms
 )
 
 (deflayer symbol
@@ -154,12 +154,12 @@
 
   ;; Thumb
   gui (tap-dance 500 (lmet (layer-while-held left-modifier)))
-  ealt (tap-hold-press 100 150 esc lalt)
+  aEsc (tap-hold-press 100 150 esc lalt)
   ctab (tap-hold-press 100 150 tab lctl)
   nav (tap-hold-release-keys 100 150 (multi spc @tap) (layer-while-held navigation) $letter-keys)
   bs (tap-hold 100 150 bspc lsft)
   sym (tap-hold-press 100 150 ret (layer-while-held symbol))
-  adel (tap-hold-press 100 150 del lalt)
+  aDel (tap-hold-press 100 150 del lalt)
   met; (tap-hold-press 100 150 ; (layer-while-held meta-fn))
   mofn (tap-dance 500 ((layer-while-held function) (layer-while-held right-modifier)))
 
