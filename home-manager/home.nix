@@ -25,7 +25,7 @@
     gh
 
     # utils
-    # kanata
+    kanata
     fastfetch
     fzf
     jq

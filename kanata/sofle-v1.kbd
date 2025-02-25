@@ -1,7 +1,7 @@
 (defcfg
   process-unmapped-keys      yes
   concurrent-tap-hold        yes
-  chords-v2-min-idle         200 ;; the timer during which chords v2 processing is disabled
+  ;; chords-v2-min-idle         200 ;; the timer during which chords v2 processing is disabled
   movemouse-smooth-diagonals yes ;; non-smooth diagonals when drawing a line in some app
 )
 
